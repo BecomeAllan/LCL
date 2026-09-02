@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1788368118.31195 "/home/ccaesar/LCL/exp1/Exp01/relatorio.tex" "relatorio.pdf" "relatorio" 1788368119.66225 0
-  "/home/ccaesar/LCL/exp1/Exp01/relatorio.tex" 1788368117.91223 11952 b11bbc4eed212a46bb48d9047e0e7b57 ""
+["pdflatex"] 1788368236.36469 "/home/ccaesar/LCL/exp1/Exp01/relatorio.tex" "relatorio.pdf" "relatorio" 1788368237.54395 0
+  "/home/ccaesar/LCL/exp1/Exp01/relatorio.tex" 1788368235.95785 11954 2bf62f4a0ddf57c5e9edf3f26af7fb42 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1775415801 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1775415801 1292 bd42be2f344128bff6d35d98474adfe3 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr8t.tfm" 1775415801 1384 4632f5e54900a7dadbb83f555bc61e56 ""
@@ -195,9 +195,9 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788367795 328487 af9ee1ad12a077e0a84d12db04b2ed50 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788367758 2328181 a1060369a0fef8af754ac8a6cfa8de5a ""
   "caption2.sty" 1788360445.84411 15190 35c3352faab63b28086162350d49d218 ""
-  "relatorio.aux" 1788368119.556 3696 9e4e345ad6abd3508ede201b0135c297 "pdflatex"
-  "relatorio.out" 1788368119.558 1908 2a83f1faa0a9e5db32b5f2e443e2d57b "pdflatex"
-  "relatorio.tex" 1788368117.91223 11952 b11bbc4eed212a46bb48d9047e0e7b57 ""
+  "relatorio.aux" 1788368237.43356 3696 9e4e345ad6abd3508ede201b0135c297 "pdflatex"
+  "relatorio.out" 1788368237.43556 1908 2a83f1faa0a9e5db32b5f2e443e2d57b "pdflatex"
+  "relatorio.tex" 1788368235.95785 11954 2bf62f4a0ddf57c5e9edf3f26af7fb42 ""
   "sbc-template.sty" 1788360445.84656 5285 fb8f2a32de10fa23e40f15acd9749a09 ""
   (generated)
   "relatorio.aux"
