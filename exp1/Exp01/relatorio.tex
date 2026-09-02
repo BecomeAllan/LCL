@@ -1,0 +1,316 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Relatorio do 1o experimento - dados simulados
+% ATENCAO: substitua as medicoes e os links por registros reais
+% antes de entregar o relatorio.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+
+% Usa o modelo SBC quando ele estiver disponível no projeto. As definições
+% alternativas abaixo permitem compilar também sem o arquivo sbc-template.sty.
+\IfFileExists{sbc-template.sty}{
+    \usepackage{sbc-template}
+}{
+    \newcommand{\email}[1]{\texttt{##1}}
+    \newcommand{\address}[1]{\date{##1}}
+    \newenvironment{resumo}
+        {\renewcommand{\abstractname}{Resumo}\begin{abstract}}
+        {\end{abstract}}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\IfFileExists{brazil.ldf}{\usepackage[brazil]{babel}}{\usepackage[english]{babel}}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{circuitikz}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\sloppy
+
+\title{Experimento 1\\
+Portas Lógicas AND, OR e NOT}
+
+\author{Grupo [número do grupo]\\
+        Allan Victor Almeida Faria, 261010546\\
+        \mbox{[Nome do integrante, matrícula]}\\
+        \mbox{[Nome do integrante, matrícula]}}
+
+\address{Departamento de Ciência da Computação -- Universidade de Brasília (UnB)\\
+  CIC0231 -- Laboratório de Circuitos Lógicos\\
+  \today
+  \email{[inserir e-mails do grupo]}
+}
+
+\begin{document}
+
+\maketitle
+
+\renewcommand{\abstractname}{Abstract}
+\begin{abstract}
+This report describes a simulated version of the first experiment with AND,
+OR, and NOT logic gates. The operation of the digital kit, the output voltages
+of the 74HC08 and 74HC32 integrated circuits, and the implementation of an AND
+gate using only OR and NOT gates were analyzed. The simulated results reproduced
+the expected truth tables. The values and media links must be replaced by actual
+experimental records before submission.
+\end{abstract}
+
+\begin{resumo}
+Este relatório apresenta uma versão simulada do primeiro experimento com portas
+lógicas AND, OR e NOT. Foram analisados o funcionamento do kit digital, as
+tensões de saída dos circuitos integrados 74HC08 e 74HC32 e a implementação de
+uma porta AND usando somente portas OR e NOT. Os resultados simulados reproduziram
+as tabelas verdade esperadas. Os valores e links devem ser substituídos pelos
+registros reais antes da entrega.
+\end{resumo}
+
+\section{Introdução}
+\label{sec:introducao}
+
+Os circuitos digitais representam informações por meio de níveis discretos de
+tensão, interpretados como valores lógicos 0 e 1. As operações fundamentais da
+álgebra booleana incluem AND, OR e NOT. Essas operações podem ser implementadas
+por circuitos integrados que reúnem várias portas lógicas em um único componente.
+
+Neste experimento foram utilizados os circuitos integrados 74HC08, formado por
+quatro portas AND de duas entradas; 74HC32, formado por quatro portas OR de duas
+entradas; e 74HC04, composto por portas inversoras. Também foi analisada a
+diferença entre os valores lógicos abstratos e as tensões elétricas efetivamente
+observadas nas saídas.
+
+\subsection{Objetivos}
+\label{sec:objetivos}
+
+Os objetivos do experimento foram conhecer o funcionamento básico do kit lógico,
+medir a tensão de alimentação, verificar experimentalmente as tabelas verdade das
+portas AND e OR e implementar uma porta AND utilizando apenas portas OR e NOT,
+com base nas leis de De Morgan.
+
+\subsection{Materiais}
+\label{sec:materiais}
+
+Foram considerados os seguintes materiais e equipamentos:
+
+\begin{itemize}
+    \item kit lógico digital com chaves e LEDs;
+    \item \textit{protoboard};
+    \item multímetro digital;
+    \item fios conectores;
+    \item circuito integrado 74HC08;
+    \item circuito integrado 74HC32;
+    \item circuito integrado 74HC04.
+\end{itemize}
+
+\section{Procedimentos e Resultados}
+\label{sec:procedimentos}
+
+\textbf{Aviso:} as medições e os links apresentados nesta versão são simulados
+e servem apenas para estruturar e testar o documento. Eles não constituem
+evidência da execução do experimento.
+
+\subsection{Teste do LED e medição da alimentação}
+\label{sec:alimentacao}
+
+Inicialmente, um LED do painel digital foi conectado a uma das chaves do kit.
+No comportamento simulado, o LED acendeu quando a chave foi colocada em nível
+lógico 1 e apagou quando ela foi colocada em nível lógico 0.
+
+Considerou-se a medição da tensão entre os terminais VCC e GND com o multímetro
+ajustado para tensão contínua. O valor simulado foi:
+
+\begin{equation}
+    V_{CC}=4{,}97\ \text{V}.
+\end{equation}
+
+Esse valor está próximo da alimentação nominal de 5 V indicada para o kit.
+
+\subsection{Teste das portas AND e OR}
+\label{sec:portas}
+
+As chaves A e B foram consideradas como entradas dos circuitos integrados. As
+saídas das quatro portas internas foram associadas aos LEDs L0, L1, L2 e L3.
+Para cada combinação das entradas, foram geradas tensões simuladas compatíveis
+com o comportamento lógico esperado.
+
+O registro fotográfico fictício da montagem pode ser acessado neste
+\href{https://example.com/experimento1/foto-montagem-74hc}{link da foto simulada}.
+
+\subsubsection{Portas AND do CI 74HC08}
+
+Cada porta do CI 74HC08 realiza a operação:
+
+\begin{equation}
+    S=A\cdot B.
+\end{equation}
+
+A Tabela~\ref{tab:and} apresenta as tensões simuladas para as quatro portas AND.
+
+\begin{table}[H]
+    \centering
+    \caption{Tensões simuladas nas saídas das portas AND do CI 74HC08.}
+    \label{tab:and}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        B & A & L3 = S4 (V) & L2 = S3 (V) & L1 = S2 (V) & L0 = S1 (V) \\
+        \hline
+        0 & 0 & 0,03 & 0,04 & 0,02 & 0,05 \\
+        \hline
+        0 & 1 & 0,05 & 0,03 & 0,04 & 0,06 \\
+        \hline
+        1 & 0 & 0,04 & 0,06 & 0,03 & 0,05 \\
+        \hline
+        1 & 1 & 4,91 & 4,89 & 4,93 & 4,90 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Os dados simulados reproduzem a tabela verdade da operação AND. Tensões entre
+0,02 V e 0,06 V foram geradas quando ao menos uma entrada estava em nível baixo.
+Quando A e B estavam simultaneamente em nível alto, as saídas ficaram entre
+4,89 V e 4,93 V.
+
+\subsubsection{Portas OR do CI 74HC32}
+
+Cada porta do CI 74HC32 realiza a operação:
+
+\begin{equation}
+    S=A+B.
+\end{equation}
+
+A Tabela~\ref{tab:or} apresenta as tensões simuladas para as quatro portas OR.
+
+\begin{table}[H]
+    \centering
+    \caption{Tensões simuladas nas saídas das portas OR do CI 74HC32.}
+    \label{tab:or}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        B & A & L3 = S4 (V) & L2 = S3 (V) & L1 = S2 (V) & L0 = S1 (V) \\
+        \hline
+        0 & 0 & 0,04 & 0,03 & 0,06 & 0,05 \\
+        \hline
+        0 & 1 & 4,90 & 4,92 & 4,88 & 4,91 \\
+        \hline
+        1 & 0 & 4,89 & 4,93 & 4,91 & 4,90 \\
+        \hline
+        1 & 1 & 4,92 & 4,90 & 4,94 & 4,91 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Os dados simulados também reproduzem a tabela verdade da porta OR. Para
+$A=0$ e $B=0$, as tensões ficaram próximas de 0 V. Nas demais combinações,
+as tensões permaneceram próximas da alimentação do circuito, representando o
+nível lógico alto.
+
+O procedimento fictício de teste das portas pode ser acessado neste
+\href{https://example.com/experimento1/video-teste-and-or}{link do vídeo simulado}.
+
+\subsubsection{Análise das tensões}
+
+Embora os sinais sejam interpretados como valores lógicos 0 ou 1, suas tensões
+reais não precisam ser exatamente iguais a 0 V ou 5 V. Usando como referência
+pedagógica as faixas apresentadas na Figura 2 do roteiro, as tensões simuladas
+próximas de 0 V representam nível lógico baixo, enquanto as tensões próximas de
+5 V representam nível lógico alto. Nenhum valor simulado permaneceu na região
+de indefinição.
+
+As pequenas diferenças entre S1, S2, S3 e S4 representam possíveis variações
+internas das portas, precisão do multímetro, resistência dos fios e contatos,
+variação da alimentação e carga introduzida pelos LEDs. Apesar dessas diferenças,
+todas as saídas conservaram os níveis lógicos esperados.
+
+Cabe observar que a Figura 2 do roteiro apresenta níveis característicos da
+família TTL, enquanto os circuitos utilizados pertencem à família CMOS 74HC.
+Por isso, uma análise elétrica rigorosa deve considerar os limites especificados
+nos \textit{datasheets} dos componentes 74HC08 e 74HC32.
+
+\subsection{Implementação de uma porta AND com OR e NOT}
+\label{sec:and-or-not}
+
+A porta AND pode ser implementada utilizando somente portas OR e NOT por meio
+da lei de De Morgan:
+
+\begin{equation}
+    A\cdot B=\overline{\overline{A}+\overline{B}}.
+    \label{eq:demorgan}
+\end{equation}
+
+As entradas A e B são inicialmente invertidas por duas portas do CI 74HC04.
+Os sinais resultantes são aplicados a uma porta OR do CI 74HC32. A saída da
+porta OR passa por uma terceira porta NOT, produzindo a operação AND.
+
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}
+        \node[not port] (notA) at (0,1.5) {};
+        \node[not port] (notB) at (0,0) {};
+        \node[or port]  (or1)  at (3,0.75) {};
+        \node[not port] (notS) at (5.5,0.75) {};
+
+        \draw (notA.out) -- (or1.in 1);
+        \draw (notB.out) -- (or1.in 2);
+        \draw (or1.out) -- (notS.in);
+
+        \draw (notA.in) -- ++(-1,0) node[left] {$A$};
+        \draw (notB.in) -- ++(-1,0) node[left] {$B$};
+        \draw (notS.out) -- ++(1,0) node[right] {$S=A\cdot B$};
+    \end{circuitikz}
+    \caption{Implementação de uma porta AND utilizando portas OR e NOT.}
+    \label{fig:and-or-not}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{Resultados simulados da porta AND implementada com OR e NOT.}
+    \label{tab:and-or-not}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        B & A & Saída esperada & Tensão simulada em L0 (V) \\
+        \hline
+        0 & 0 & 0 & 0,07 \\
+        \hline
+        0 & 1 & 0 & 0,05 \\
+        \hline
+        1 & 0 & 0 & 0,06 \\
+        \hline
+        1 & 1 & 1 & 4,87 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Os resultados simulados mostram nível lógico alto somente quando A e B estão
+simultaneamente em nível 1. Assim, a montagem reproduz a tabela verdade da porta
+AND e ilustra a aplicação da lei de De Morgan.
+
+O registro fictício dessa montagem pode ser acessado neste
+\href{https://example.com/experimento1/video-and-com-or-not}{link do vídeo simulado}.
+
+\section{Conclusões}
+\label{sec:conclusao}
+
+Com base nos dados simulados, foi possível representar o funcionamento das
+portas AND e OR e distinguir os níveis lógicos das tensões físicas. As quatro
+portas de cada circuito integrado apresentaram o mesmo comportamento lógico,
+apesar das pequenas variações de tensão geradas entre as saídas.
+
+A implementação da porta AND com portas OR e NOT reproduziu a tabela verdade
+esperada e demonstrou a aplicação prática da lei de De Morgan. Para que estas
+conclusões representem a execução efetiva do experimento, as medições simuladas
+e os links fictícios devem ser substituídos pelos registros obtidos no laboratório.
+
+\newpage
+\section*{Autoavaliação}
+
+As respostas da autoavaliação devem ser preenchidas pelo grupo após a discussão
+das questões propostas no roteiro.
+
+\end{document}
