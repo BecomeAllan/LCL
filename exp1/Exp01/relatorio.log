@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.2)  4 SEP 2026 08:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.2)  4 SEP 2026 08:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -629,10 +629,21 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 158.
+<figcircuito1.png, id=64, 603.25375pt x 443.6575pt>
+File: figcircuito1.png Graphic file (type png)
+<use figcircuito1.png>
+Package pdftex.def Info: figcircuito1.png  used on input line 145.
+(pdftex.def)             Requested size: 284.52756pt x 209.25017pt.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 146.
  (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
-) [2] [3] [4] [5] (./relatorio.bbl) [6] (./relatorio.aux)
+)
+Underfull \vbox (badness 7486) has occurred while \output is active []
+
+ [2] [3 <./figcircuito1.png (PNG copy)>]
+Underfull \vbox (badness 3323) has occurred while \output is active []
+
+ [4] [5] (./relatorio.bbl) [6] (./relatorio.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -641,18 +652,18 @@ Package rerunfilecheck Info: File `relatorio.out' has not changed.
 (rerunfilecheck)             Checksum: 2A83F1FAA0A9E5DB32B5F2E443E2D57B;1908.
  ) 
 Here is how much of TeX's memory you used:
- 41115 strings out of 469515
- 973113 string characters out of 5470808
- 1650324 words of memory out of 5000000
- 69299 multiletter control sequences out of 15000+600000
+ 41124 strings out of 469515
+ 973295 string characters out of 5470808
+ 1649366 words of memory out of 5000000
+ 69307 multiletter control sequences out of 15000+600000
  663235 words of font info for 76 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,10n,118p,462b,781s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (6 pages, 137178 bytes).
+Output written on relatorio.pdf (6 pages, 474515 bytes).
 PDF statistics:
  169 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 136 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
