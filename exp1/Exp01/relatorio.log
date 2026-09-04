@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.2)  4 SEP 2026 19:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.2)  4 SEP 2026 19:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -623,7 +623,7 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 55.
  (/usr/share/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 103.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 101.
  (/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [1
@@ -632,9 +632,9 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 <figcircuito1.png, id=63, 603.25375pt x 443.6575pt>
 File: figcircuito1.png Graphic file (type png)
 <use figcircuito1.png>
-Package pdftex.def Info: figcircuito1.png  used on input line 141.
+Package pdftex.def Info: figcircuito1.png  used on input line 139.
 (pdftex.def)             Requested size: 284.52756pt x 209.25017pt.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 142.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 140.
  (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 ) [2 <./figcircuito1.png (PNG copy)>] [3] [4] [5] (./relatorio.bbl) [6] (./relatorio.aux)
@@ -654,7 +654,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  99i,10n,118p,462b,781s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (6 pages, 464456 bytes).
+Output written on relatorio.pdf (6 pages, 464143 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  132 compressed objects within 2 object streams

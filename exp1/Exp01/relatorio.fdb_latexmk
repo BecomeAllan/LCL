@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex relatorio"] 1788560222.32056 "relatorio.aux" "relatorio.bbl" "relatorio" 1788561188.41122 0
+["bibtex relatorio"] 1788561626.37294 "relatorio.aux" "relatorio.bbl" "relatorio" 1788561659.1687 0
   "./relatorio.bib" 1788520622.21471 1338 30606684174017fd10a32d16365aed57 ""
   "/usr/share/texmf-dist/bibtex/bst/base/plain.bst" 1775415801 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "relatorio.aux" 1788561188.28666 4020 4c5dfe5d47f2c10c82c4af7460881939 "pdflatex"
+  "relatorio.aux" 1788561659.05393 4020 232e97441349071483f520124acd946d "pdflatex"
   (generated)
   "relatorio.bbl"
   "relatorio.blg"
   (rewritten before read)
-["pdflatex"] 1788561187.23794 "/home/ccaesar/LCL/exp1/Exp01/relatorio.tex" "relatorio.pdf" "relatorio" 1788561188.41146 0
-  "/home/ccaesar/LCL/exp1/Exp01/relatorio.tex" 1788561186.94835 12119 0dc84a303e320bc13e0f303f4e79b49e ""
+["pdflatex"] 1788561658.07244 "/home/ccaesar/LCL/exp1/Exp01/relatorio.tex" "relatorio.pdf" "relatorio" 1788561659.16893 0
+  "/home/ccaesar/LCL/exp1/Exp01/relatorio.tex" 1788561657.76678 11737 207d46a885a36665dfe9736a44848ce9 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1775415801 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr8t.tfm" 1775415801 1384 4632f5e54900a7dadbb83f555bc61e56 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm" 1775415801 4484 b828043cbd581d289d955903c1339981 ""
@@ -201,10 +201,10 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788367758 2328181 a1060369a0fef8af754ac8a6cfa8de5a ""
   "caption2.sty" 1788360445.84411 15190 35c3352faab63b28086162350d49d218 ""
   "figcircuito1.png" 1788521243.61096 337404 02139a9a363db68efb54a3caf89e3c82 ""
-  "relatorio.aux" 1788561188.28666 4020 4c5dfe5d47f2c10c82c4af7460881939 "pdflatex"
-  "relatorio.bbl" 1788560222.33724 301 006290e18384c34353939136b393add5 "bibtex relatorio"
-  "relatorio.out" 1788561188.28866 1908 2a83f1faa0a9e5db32b5f2e443e2d57b "pdflatex"
-  "relatorio.tex" 1788561186.94835 12119 0dc84a303e320bc13e0f303f4e79b49e ""
+  "relatorio.aux" 1788561659.05393 4020 232e97441349071483f520124acd946d "pdflatex"
+  "relatorio.bbl" 1788561626.39252 301 006290e18384c34353939136b393add5 "bibtex relatorio"
+  "relatorio.out" 1788561659.05593 1908 2a83f1faa0a9e5db32b5f2e443e2d57b "pdflatex"
+  "relatorio.tex" 1788561657.76678 11737 207d46a885a36665dfe9736a44848ce9 ""
   "sbc-template.sty" 1788360445.84656 5285 fb8f2a32de10fa23e40f15acd9749a09 ""
   (generated)
   "relatorio.aux"
