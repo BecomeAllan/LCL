@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex relatorio"] 1788963534.05106 "relatorio.aux" "relatorio.bbl" "relatorio" 1788964399.19505 0
-  "./relatorio.bib" 1788360445.83439 1005 a5ca6b2b8462c7f3d6bd0d22d7147d03 ""
-  "./sbc.bst" 1788360445.83439 21864 a668496cca21cfdd211f7fb5f0d57565 ""
-  "relatorio.aux" 1788964399.04142 2409 96f8c8230e6016b7faaabaa255bcebed "pdflatex"
+["bibtex relatorio"] 0 "relatorio.aux" "relatorio.bbl" "relatorio" 1788986406.3111 -1
+  "./relatorio.bib" 1788977923.88487 1544 ab106f15219863d6e22a8d554130506d ""
+  "/usr/share/texmf-dist/bibtex/bst/base/plain.bst" 1775415801 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
+  "relatorio.aux" 1788986406.20343 3177 ea993b1c21232b105e3480bddde022ad "pdflatex"
   (generated)
   "relatorio.bbl"
   "relatorio.blg"
   (rewritten before read)
-["pdflatex"] 1788964398.31457 "/home/ccaesar/LCL/Exp02/relatorio.tex" "relatorio.pdf" "relatorio" 1788964399.19563 0
-  "/home/ccaesar/LCL/Exp02/relatorio.tex" 1788964397.95044 6440 764fe0307bc23e34c3ad0d6d062237f7 ""
+["pdflatex"] 1788986405.58428 "/home/ccaesar/LCL/Exp02/relatorio.tex" "relatorio.pdf" "relatorio" 1788986406.31148 0
+  "/home/ccaesar/LCL/Exp02/relatorio.tex" 1788986405.27141 8456 a6644a5e4291b757f96f7df13dd2dbf9 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1775415801 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1775415801 960 379cc0019370a9e0208a0a3f949f847a ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1775415801 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -117,11 +117,11 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788963450 328759 3d8ba6ffe9a13491c7e7884ddcacc692 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788963416 2970202 9d6131765ed01d8dc3085bed07e27c25 ""
   "caption2.sty" 1788360445.83424 15190 35c3352faab63b28086162350d49d218 ""
-  "fig1.jpg" 1788360445.83439 39933 79da1f77b4599c71378d76c4aec374c6 ""
-  "relatorio.aux" 1788964399.04142 2409 96f8c8230e6016b7faaabaa255bcebed "pdflatex"
-  "relatorio.bbl" 1788963534.07016 789 4ce6edf11934fbafe9e6a340e889c77a "bibtex relatorio"
-  "relatorio.out" 1788964399.04442 911 841c4f461206f09565efa168d8e8e46c "pdflatex"
-  "relatorio.tex" 1788964397.95044 6440 764fe0307bc23e34c3ad0d6d062237f7 ""
+  "circnand3.png" 1788986236.94074 321052 68e0ff987285f27834444b646d1e1ad2 ""
+  "relatorio.aux" 1788986406.20343 3177 ea993b1c21232b105e3480bddde022ad "pdflatex"
+  "relatorio.bbl" 1788985974.68394 859 e2418d98a69b928bccde8387c3929149 "bibtex relatorio"
+  "relatorio.out" 1788986406.20643 1277 39a3cb19b2f2fe44ce3f8051982652a9 "pdflatex"
+  "relatorio.tex" 1788986405.27141 8456 a6644a5e4291b757f96f7df13dd2dbf9 ""
   "sbc-template.sty" 1788360445.83439 5285 fb8f2a32de10fa23e40f15acd9749a09 ""
   (generated)
   "relatorio.aux"

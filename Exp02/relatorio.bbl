@@ -1,19 +1,24 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
 
-\bibitem[Boulic and Renault 1991]{boulic:91}
-Boulic, R. and Renault, O. (1991).
+\bibitem{boulic:91}
+R.~Boulic and O.~Renault.
 \newblock 3d hierarchies for animation.
-\newblock In Magnenat-Thalmann, N. and Thalmann, D., editors, {\em New Trends in Animation and Visualization}. John Wiley {\&} Sons ltd.
+\newblock In Nadia Magnenat-Thalmann and Daniel Thalmann, editors, {\em New Trends in Animation and Visualization}. John Wiley {\&} Sons ltd., 1991.
 
-\bibitem[Smith and Jones 1999]{smith:99}
-Smith, A. and Jones, B. (1999).
+\bibitem{smith:99}
+A.~Smith and B.~Jones.
 \newblock On the complexity of computing.
-\newblock In Smith-Jones, A.~B., editor, {\em Advances in Computer Science}, pages 555--566. Publishing Press.
+\newblock In A.~B. Smith-Jones, editor, {\em Advances in Computer Science}, pages 555--566. Publishing Press, 1999.
 
-\bibitem[Wikipedia 2016]{systemverilog}
-Wikipedia (2016).
+\bibitem{wakerly90}
+John~F. Wakerly.
+\newblock {\em Digital Design: Principles and Practices}.
+\newblock Pearson, 3rd edition, 1990.
+
+\bibitem{systemverilog}
+Wikipedia.
 \newblock Systemverilog --- wikipedia{,} the free encyclopedia.
-\newblock \url{https://en.wikipedia.org/w/index.php?title=SystemVerilog&oldid=728456019}.
+\newblock \url{https://en.wikipedia.org/w/index.php?title=SystemVerilog&oldid=728456019}, 2016.
 \newblock [Online; accessed 9-July-2016].
 
 \end{thebibliography}

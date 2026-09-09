@@ -31,8 +31,8 @@
      
 \sloppy
 
-\title{Experimento X\\ 
-Circuitos Combinacionais: Multiplexadores}
+\title{Experimento 2\\ 
+Portas Lógicas: NAND, NOR, e XOR}
 
 \author{Grupo G37\\    %%%% LEMBRE-SE DE MUDAR O GRUPO !!!!! %%%%%%
         Aluno 1, 10/0012345\\
@@ -89,36 +89,154 @@ Neste experimento foram utilizados os seguintes materiais e equipamentos:
 
 Deve conter a descrição completa de cada item solicitado no experimento, como foram realizados, problemas encontrados e resultados obtidos (esperados ou não). Deve conter figuras, fotos, gráficos, tabelas e links clicáveis para os vídeos solicitados.
 
-\subsection{Multiplexador de 4 entradas}
-\label{sec:Mux}
+\subsection{Porta NAND de três entradas}
+\label{sec:NAND3}
 
-Descrever o experimento realizado. Sempre que colocar uma figura, deve-se explicar o que o leitor deve ver, ou uma análise logo após a figura. 
+\subsubsection{Construção Lógica}
+
+A construção de uma porta NAND de três entradas utilzando apenas outras NANDs de duas entradas
+é possível adotando uma abordagem sequencial:
+
+\[S = \overline{ABC}\]
+\[S = \overline{(AB)C}\]
+
+\noindent bastando calcular \(AB\) em forma de uma operação NAND, a saber,
+aplicando o princípio da dupla negação e da idempotência \cite{wakerly90}:
+
+
+\begin{equation}
+    S = \overline{(\overline{\overline{AB}\quad\overline{AB}})C}
+\end{equation}
+
+Dessa forma, são necessárias três portas NANDs de duas portas
+para realizar uma porta NAND de três portas. A tabela com as
+saídas de cada NAND do circuito é:
+
+\begin{table}[H]
+
+    \centering
+
+    \caption{Tabela Verdade da função NAND de três entradas}
+
+    \label{tab:tabela-nand-3}
+
+    \begin{tabular}{|c|c|c|c|c|c|}
+    
+        \hline
+        
+        A & B & C & AB & \(\overline{AB}\) & \(\overline{ABC}\)\\
+        
+        \hline
+        
+        0 & 0 & 0 & 0 & 1 & 1 \\
+        
+        \hline
+        
+        0 & 0 & 1 & 0 & 1 & 1 \\
+        
+        \hline
+        
+        0 & 1 & 0 & 0 & 1 & 1 \\
+        
+        \hline
+        
+        0 & 1 & 1 & 0 & 1 & 1 \\
+        
+        \hline
+        
+        1 & 0 & 0 & 0 & 1 & 1 \\
+        
+        \hline
+        
+        1 & 0 & 1 & 0 & 1 & 1 \\
+        
+        \hline
+        
+        1 & 1 & 0 & 1 & 0 & 1 \\
+        
+        \hline
+        
+        1 & 1 & 1 & 1 & 0 & 0 \\
+        
+        \hline
+        
+    \end{tabular}
+
+\end{table}
+
+\subsubsection{Verificação Experimental}
+
+O circuito descrito acima foi montado no Protoboard, utilizando-se do
+CI 74HC00 como fornecedor das portas NANDs, e as tensões
+de \(5V\) e \(0V\) para alimentar o circuito. As saídas foram mensuradas visualmente a partir
+da conexão das saídas do 74HC00 aos Leds L2,L1,L0 do Kit Eletrônico. Seguem abaixo, respectivamente,
+a configuração do circuito montado no Protoboard e a tabela gerada
+a partir da medição, cujo vídeo pode ser acessado nesse \href{google.com}{link(INSERIR LINK REAL)}.
+
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.5\textwidth]{fig1.jpg}
-    \caption{Exemplo de como colocar a legenda em uma figura.}
-    \label{fig:exemplo}
+    \includegraphics[width=.75\textwidth]{circnand3.png}
+    \caption{Circuito Real da NAND de Três Portas.}
+    \label{fig:nand3exp}
 \end{figure}
 
-A Figura~\ref{fig:exemplo} apresenta um exemplo de como usar e citar uma figura. Sempre comente cada figura no texto.
+\begin{table}[H]
 
-Aqui temos um exemplo de como citar uma URL na bibliografia~\cite{systemverilog}.
+    \centering
 
-Aqui temos um exemplo de como criar um hiperlink. Veja neste
-\href{https://www.youtube.com/watch?v=itWbXy0Qzw0}{link} um exemplo de vídeo publicado. Ao contrário do vídeo deste exemplo, sempre inicie o vídeo apresentando o grupo (nome e semestre), narrando o que é o experimento, os objetivos e descreva o que está sendo feito no vídeo.
+    \caption{Tabela resultante do experimento com NAND de três entradas}
 
-Sempre identifique no site do vídeo:
-\begin{itemize}
-    \item o experimento: Experimento 7;
-    \item o semestre: 2022/1;
-    \item a disciplina: CIC0231 - Laboratório de Circuitos Lógicos;
-    \item a universidade: Universidade de Brasília (UnB);
-    \item o grupo: Grupo G37;
-    \item os nomes dos componentes do grupo.
-\end{itemize}
+    \label{tab:tabela-nand-exp}
 
-Desta forma se facilita uma busca pelo vídeo. É apresentado acima como fazer uma listagem não numerada.
+    \begin{tabular}{|c|c|c|c|c|c|}
+    
+        \hline
+        
+        A & B & C & AB & \(\overline{AB}\) & \(\overline{ABC}\)\\
+        
+        \hline
+        
+        0 & 0 & 0 & 0 & 1 & 1 \\
+        
+        \hline
+        
+        0 & 0 & 1 & 0 & 1 & 1 \\
+        
+        \hline
+        
+        0 & 1 & 0 & 0 & 1 & 1 \\
+        
+        \hline
+        
+        0 & 1 & 1 & 0 & 1 & 1 \\
+        
+        \hline
+        
+        1 & 0 & 0 & 0 & 1 & 1 \\
+        
+        \hline
+        
+        1 & 0 & 1 & 0 & 1 & 1 \\
+        
+        \hline
+        
+        1 & 1 & 0 & 1 & 0 & 1 \\
+        
+        \hline
+        
+        1 & 1 & 1 & 1 & 0 & 0 \\
+        
+        \hline
+        
+    \end{tabular}
+
+\end{table}
+
+Verifica-se que as tabelas teóricas e medidas são idênticas, de modo que
+o circuito montado representa corretamente uma NAND de três portas e
+nossas deduções algébricas para definir uma NAND de três portas a partir de
+duas foram validados.
 
 \subsection{Demultiplexador}
 \label{sec:Demux}
@@ -166,7 +284,7 @@ Dica: Use pesquisa na Internet para tirar as dúvidas sobre edição em \LaTeX .
 Concluir o relatório explanando rapidamente o que foi feito e os resultados obtidos, sempre correlacionando com os objetivos do experimento apresentados na Seção~\ref{sec:Objetivos}. 
 
 
-\bibliographystyle{sbc}
+\bibliographystyle{plain}
 \bibliography{relatorio}  %Aqui é a definição do arquivo .bib a ser usado pelas referências
 
 
