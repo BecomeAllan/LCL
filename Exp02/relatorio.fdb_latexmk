@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex relatorio"] 0 "relatorio.aux" "relatorio.bbl" "relatorio" 1788986406.3111 -1
+["bibtex relatorio"] 0 "relatorio.aux" "relatorio.bbl" "relatorio" 1788994907.51846 -1
   "./relatorio.bib" 1788977923.88487 1544 ab106f15219863d6e22a8d554130506d ""
   "/usr/share/texmf-dist/bibtex/bst/base/plain.bst" 1775415801 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "relatorio.aux" 1788986406.20343 3177 ea993b1c21232b105e3480bddde022ad "pdflatex"
+  "relatorio.aux" 1788994907.33974 5190 7263917b0f0b7fa6657443aecacf8808 "pdflatex"
   (generated)
   "relatorio.bbl"
   "relatorio.blg"
   (rewritten before read)
-["pdflatex"] 1788986405.58428 "/home/ccaesar/LCL/Exp02/relatorio.tex" "relatorio.pdf" "relatorio" 1788986406.31148 0
-  "/home/ccaesar/LCL/Exp02/relatorio.tex" 1788986405.27141 8456 a6644a5e4291b757f96f7df13dd2dbf9 ""
+["pdflatex"] 1788994906.59059 "/home/ccaesar/LCL/Exp02/relatorio.tex" "relatorio.pdf" "relatorio" 1788994907.51888 0
+  "/home/ccaesar/LCL/Exp02/relatorio.tex" 1788994906.27901 13290 29bfa3aaebc53e2ffde04f6b33c0a025 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1775415801 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1775415801 960 379cc0019370a9e0208a0a3f949f847a ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1775415801 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -34,9 +34,9 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1775415801 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1775415801 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1775415801 36741 fa121aac0049305630cf160b86157ee4 ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1775415801 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1775415801 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1775415801 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1775415801 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1775415801 45758 19968a0990191524e34e1994d4a31cb6 ""
   "/usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb" 1775415801 35941 f27169cc74234d5bd5e4cca5abafaabb ""
   "/usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1775415801 44729 811d6c62865936705a31c797a1d5dada ""
@@ -118,11 +118,14 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788963416 2970202 9d6131765ed01d8dc3085bed07e27c25 ""
   "caption2.sty" 1788360445.83424 15190 35c3352faab63b28086162350d49d218 ""
   "circnand3.png" 1788986236.94074 321052 68e0ff987285f27834444b646d1e1ad2 ""
-  "relatorio.aux" 1788986406.20343 3177 ea993b1c21232b105e3480bddde022ad "pdflatex"
-  "relatorio.bbl" 1788985974.68394 859 e2418d98a69b928bccde8387c3929149 "bibtex relatorio"
-  "relatorio.out" 1788986406.20643 1277 39a3cb19b2f2fe44ce3f8051982652a9 "pdflatex"
-  "relatorio.tex" 1788986405.27141 8456 a6644a5e4291b757f96f7df13dd2dbf9 ""
+  "relatorio.aux" 1788994907.33974 5190 7263917b0f0b7fa6657443aecacf8808 "pdflatex"
+  "relatorio.bbl" 1788994889.02371 794 456ee34f584129eae49a053340092d05 "bibtex relatorio"
+  "relatorio.out" 1788994907.34374 1960 b6848bc622ce4f7d621d19cd76118c6d "pdflatex"
+  "relatorio.tex" 1788994906.27901 13290 29bfa3aaebc53e2ffde04f6b33c0a025 ""
   "sbc-template.sty" 1788360445.83439 5285 fb8f2a32de10fa23e40f15acd9749a09 ""
+  "xor-com-nand.png" 1788987398.74367 160507 752812c2d66491bfafb6a00cb61027ef ""
+  "xor4.png" 1788993513.50698 194649 2b401c0037b08281d868a85de95cf0a6 ""
+  "xor4logi.png" 1788992629.54045 10766 a2f897468117cc80129225165acfd3a1 ""
   (generated)
   "relatorio.aux"
   "relatorio.log"

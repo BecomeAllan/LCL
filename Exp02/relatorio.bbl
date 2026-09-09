@@ -15,10 +15,10 @@ John~F. Wakerly.
 \newblock {\em Digital Design: Principles and Practices}.
 \newblock Pearson, 3rd edition, 1990.
 
-\bibitem{systemverilog}
+\bibitem{parity}
 Wikipedia.
-\newblock Systemverilog --- wikipedia{,} the free encyclopedia.
-\newblock \url{https://en.wikipedia.org/w/index.php?title=SystemVerilog&oldid=728456019}, 2016.
-\newblock [Online; accessed 9-July-2016].
+\newblock Parity function.
+\newblock \url{https://en.wikipedia.org/wiki/Parity_function}, 2009.
+\newblock [Online; accesseed 9-September-2026].
 
 \end{thebibliography}

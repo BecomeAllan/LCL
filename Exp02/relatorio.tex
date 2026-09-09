@@ -36,7 +36,7 @@ Portas Lógicas: NAND, NOR, e XOR}
 
 \author{Grupo G37\\    %%%% LEMBRE-SE DE MUDAR O GRUPO !!!!! %%%%%%
         Aluno 1, 10/0012345\\
-        Aluno 2,  12/0123456\\
+        Caio César Gonçalves Ribeiro,  211038217\\
         Aluno 3, 11/1029881\\
 }
 
@@ -87,12 +87,14 @@ Neste experimento foram utilizados os seguintes materiais e equipamentos:
 \section{Procedimentos e Resultados}
 \label{sec:Procedimentos}
 
-Deve conter a descrição completa de cada item solicitado no experimento, como foram realizados, problemas encontrados e resultados obtidos (esperados ou não). Deve conter figuras, fotos, gráficos, tabelas e links clicáveis para os vídeos solicitados.
+Foram realizados três experimentos. O primeiro consistiu na construção de uma porta NAND de três entradas a partir
+de NANDs de duas entradas; o segundo consistiu na representação da função XOR a partir de portas NAND; por fim, o terceiro
+experimento configurou a montagem de uma porta XOR de quatro entradas a partir de portas XOR de duas entradas. Em todos, comparou-se
+os resultados esperados - de acordo com a lógica digital - com a empiria.
 
 \subsection{Porta NAND de três entradas}
 \label{sec:NAND3}
 
-\subsubsection{Construção Lógica}
 
 A construção de uma porta NAND de três entradas utilzando apenas outras NANDs de duas entradas
 é possível adotando uma abordagem sequencial:
@@ -109,7 +111,8 @@ aplicando o princípio da dupla negação e da idempotência \cite{wakerly90}:
 \end{equation}
 
 Dessa forma, são necessárias três portas NANDs de duas portas
-para realizar uma porta NAND de três portas. A tabela com as
+para realizar uma porta NAND de três portas. Essa é a representação
+algébrica do circuito da Figura 6 do roteiro do experimento. A tabela com as
 saídas de cada NAND do circuito é:
 
 \begin{table}[H]
@@ -238,45 +241,333 @@ o circuito montado representa corretamente uma NAND de três portas e
 nossas deduções algébricas para definir uma NAND de três portas a partir de
 duas foram validados.
 
-\subsection{Demultiplexador}
-\label{sec:Demux}
+\subsection{Implementação de XOR com NAND}
+\label{sec:xornand}
 
-Este é outro item do experimento. Aqui temos um exemplo de como construir e citar uma tabela, conforme mostrado na Tabela~\ref{tab:resultados}.
+Dada a universalidade da operação NAND no que tange às operações Booleanas básicas,
+a porta XOR pode ser implementada utilizando apenas portas NANDs,
+já que aquela pode ser decomposta em uma soma de produtos:
+
+\begin{equation}
+    \label{eq:xorsumprd}
+    A \oplus B = A\overline{B} + \overline{A}B
+\end{equation}
+
+Aplicando dupla negação e os teoremas de De Morgan em \ref{eq:xorsumprd}, chegamos a:
+
+\begin{equation}
+    \label{eq:xornand}
+    A \oplus B = \overline{\overline{A\overline{(AB)}}\quad\overline{B\overline{(AB)}}} 
+\end{equation}
+
+\noindent que é a equação que descreve o circuito da figura 7 do roteiro do experimento.
+
+A tabela verdade esperada para XOR é bem conhecida:
 
 \begin{table}[H]
+
     \centering
-    \caption{Exemplo de como construir uma tabela.}
-    \label{tab:resultados}
-    \begin{tabular}{|c|c|c|c|c|c|c|c|}
-    \cline{2-7}
-    \multicolumn{1}{c}{} & \multicolumn{3}{|c|}{Fase 1} & \multicolumn{3}{c|}{Fase 2} & \multicolumn{1}{c}{} \\
-    \hline
-    Experimento & $n_g$ & $n_l$ & $n_t$ & $n_g$ & $n_l$ & $n_t$ & $t(s)$ \\
-    \hline
-    1 bit full adder & 8.16 & 3.8 & 47.6 & 5.03 & 3.0 & 25.93 & 99.13 \\
-    2 bits full adder & 18.06 & 5.16 & 107.13 & 11.06 & 4.9 & 60.06 & 709.56 \\
-    2 bits multiplier & 14.2 & 4.03 & 74.33 & 7.7 & 2.2 & 37.53 & 357.76 \\
-    7 segment decoder & 47.53 & 5.83 & 270.46 & 32.86 & 5.0 & 176.4 & 740.63 \\
-    Karnaugh 1 bit full adder & 19.0 & 6.0 & 102.0 & 5.03 & 3.0 & 24.8 & 130.73 \\
-    \hline
+
+    \caption{Tabela Verdade da função XOR}
+
+    \label{tab:tabela-xor}
+
+    \begin{tabular}{|c|c|c|}
+
+        \hline
+
+        A & B & \(A \oplus B = \overline{\overline{A\overline{(AB)}}\quad\overline{B\overline{(AB)}}} \)\\
+
+        \hline
+
+        0 & 0 & 0 \\
+
+        \hline
+
+        0 & 1 & 1 \\
+
+        \hline
+
+        1 & 0 & 1 \\
+
+        \hline
+
+        1 & 1 & 0 \\
+
+        \hline
+
     \end{tabular}
 
 \end{table}
 
-Aqui devemos colocar uma apresentação e análise da tabela, explicando ao leitor o que se pretende mostrar. A Tabela~\ref{tab:resultados} mostra os tempos de propagação dos diferentes circuitos testados.
+\subsection{Verficação Experimental}
 
-As equações devem fazer parte do texto, como 
+Foi utilizado o mesmo CI do primeiro experimento como fonte de portas NAND, e também a 
+mesma alimentação. Os fios foram reposicionados para atender
+à nova função, e foi usado como saída o led L0. O preenchimento em vídeo
+da tabela de verificação pode ser acessado nesse \href{google.com}{link (BOTAR O REAL)}.
+Seguem a foto da montagem do circuito e a tabela preenchida, resectivamente:
 
-\begin{equation}
-\label{eq:logica}
-    Y=AB+\bar{B}\bar{A}
-\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[]{xor-com-nand.png}
+    \caption{Circuito Real da XOR construída a partir do 74HC00.}
+    \label{fig:xornandexp}
+\end{figure}
 
-\noindent onde $A$ e $B$ são as variáveis de entrada. $Y$ a variável de saída. Podemos citar como Equação~\ref{eq:logica}.
+\begin{table}[H]
 
-Em cada item, após a apresentação dos resultados obtidos, sempre faça uma análise crítica desses resultados.
+    \centering
 
-Dica: Use pesquisa na Internet para tirar as dúvidas sobre edição em \LaTeX .
+    \caption{Tabela construída empiricamente da função XOR a partir de NAND}
+
+    \label{tab:tabela-xor-nand}
+
+    \begin{tabular}{|c|c|c|}
+
+        \hline
+
+        A & B & \(A \oplus B\)\\
+
+        \hline
+
+        0 & 0 & 0 \\
+
+        \hline
+
+        0 & 1 & 1 \\
+
+        \hline
+
+        1 & 0 & 1 \\
+
+        \hline
+
+        1 & 1 & 0 \\
+
+        \hline
+
+    \end{tabular}
+
+\end{table}
+
+Comprova-se a identidade entre as tabelas a priori e a posteriori,
+comprovando a corretude do nosso circuito quanto a representação
+da função XOR a partir de portas NAND.
+
+\subsection{XOR de quatro entradas}
+
+Já que a operação XOR é comutativa e associativa, podemos
+fazer operações par-a-par recursivamente, o que nos dá o circuito:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[]{xor4logi.png}
+    \caption{Circuito simulado no LogiSim de XOR4.}
+    \label{fig:xor4}
+\end{figure}
+
+A tabela verdade:
+
+\begin{table}[H]
+
+    \centering
+
+    \caption{Tabela Verdade da função XOR de quatro entradas}
+
+    \label{tab:tabela-xor-4}
+
+    \begin{tabular}{|c|c|c|c|c|}
+
+        \hline
+
+        A & B & C & D & \(A \oplus B \oplus C \oplus D\)\\
+
+        \hline
+
+        0 & 0 & 0 & 0 & 0 \\
+
+        \hline
+
+        0 & 0 & 0 & 1 & 1 \\
+
+        \hline
+
+        0 & 0 & 1 & 0 & 1 \\
+
+        \hline
+
+        0 & 0 & 1 & 1 & 0 \\
+
+        \hline
+
+        0 & 1 & 0 & 0 & 1 \\
+
+        \hline
+
+        0 & 1 & 0 & 1 & 0 \\
+
+        \hline
+
+        0 & 1 & 1 & 0 & 0 \\
+
+        \hline
+
+        0 & 1 & 1 & 1 & 1 \\
+
+        \hline
+
+        1 & 0 & 0 & 0 & 1 \\
+
+        \hline
+
+        1 & 0 & 0 & 1 & 0 \\
+
+        \hline
+
+        1 & 0 & 1 & 0 & 0 \\
+
+        \hline
+
+        1 & 0 & 1 & 1 & 1 \\
+
+        \hline
+
+        1 & 1 & 0 & 0 & 0 \\
+
+        \hline
+
+        1 & 1 & 0 & 1 & 1 \\
+
+        \hline
+
+        1 & 1 & 1 & 0 & 1 \\
+
+        \hline
+
+        1 & 1 & 1 & 1 & 0 \\
+
+        \hline
+
+    \end{tabular}
+
+\end{table}
+
+\subsubsection{Verificação Empírica}
+
+O CI 74HC86 proveu as portas XOR para o experimento. A alimentação foi a
+mesma dos experimentos anteriores. A saída foi verificada no Led L0. Seguem
+a imagem da montagem do circuito e a tabela-verdade mensurada empiricamente. O vídeo
+do preenchimento pode ser acessado nesse \href{google.com}{link(BOTAR O REAL)}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{xor4.png}
+    \caption{Circuito real do XOR4.}
+    \label{fig:xor4real}
+\end{figure}
+
+\begin{table}[H]
+
+    \centering
+
+    \caption{Tabela Verdade da função XOR4 empírica}
+
+    \label{tab:tabela-xor-6}
+
+    \begin{tabular}{|c|c|c|c|c|}
+
+        \hline
+
+        A & B & C & D & \(A \oplus B \oplus C \oplus D\)\\
+
+        \hline
+
+        0 & 0 & 0 & 0 & 0 \\
+
+        \hline
+
+        0 & 0 & 0 & 1 & 1 \\
+
+        \hline
+
+        0 & 0 & 1 & 0 & 1 \\
+
+        \hline
+
+        0 & 0 & 1 & 1 & 0 \\
+
+        \hline
+
+        0 & 1 & 0 & 0 & 1 \\
+
+        \hline
+
+        0 & 1 & 0 & 1 & 0 \\
+
+        \hline
+
+        0 & 1 & 1 & 0 & 0 \\
+
+        \hline
+
+        0 & 1 & 1 & 1 & 1 \\
+
+        \hline
+
+        1 & 0 & 0 & 0 & 1 \\
+
+        \hline
+
+        1 & 0 & 0 & 1 & 0 \\
+
+        \hline
+
+        1 & 0 & 1 & 0 & 0 \\
+
+        \hline
+
+        1 & 0 & 1 & 1 & 1 \\
+
+        \hline
+
+        1 & 1 & 0 & 0 & 0 \\
+
+        \hline
+
+        1 & 1 & 0 & 1 & 1 \\
+
+        \hline
+
+        1 & 1 & 1 & 0 & 1 \\
+
+        \hline
+
+        1 & 1 & 1 & 1 & 0 \\
+
+        \hline
+
+    \end{tabular}
+
+\end{table}
+
+Verifica-se a identidade entre as tabelas prevista e medida,
+comprovando a corretude de nossas suposições teóricas e montagem.
+
+\subsubsection{XOR como função de paridade}
+
+Percebe-se na tabela verdade que a saída só é 1
+quando o número de 1s na entrada é ímpar. Isso não é restrito
+a tabela de quatro entradas, mas é válido 
+a função XOR para qualquer número N de entradas. Dado a associatividade
+e comutatitividade, podem-se agrupar os 0s e 1s em
+pares iguais, os quais retornarão 0. Caso o número de 1s seja ímpar,
+ele não pode ser agrupado com outro 1 e retornar zero, dessa forma
+determinando a saída como 1.
+
+\noindent Tal propriedade de paridade \cite{parity} possui diversas utilidades, como a construção de somadores
+digitais e verificação e reparação de erro na transmissão de uma mensagem, como é o caso do
+código de Hamming.
 
 \section{Conclusões}
 \label{sec:Conclusao}
