@@ -34,17 +34,17 @@
 \title{Experimento 2\\ 
 Portas Lógicas: NAND, NOR, e XOR}
 
-\author{Grupo G37\\    %%%% LEMBRE-SE DE MUDAR O GRUPO !!!!! %%%%%%
-        Aluno 1, 10/0012345\\
+\author{Grupo B2 - Turma T2\\   
+        Allan Victor Almeida Faria, 261010546\\
         Caio César Gonçalves Ribeiro,  211038217\\
-        Aluno 3, 11/1029881\\
+        Danilo Alves Ribeiro,  242003754\\
 }
 
 
 \address{Dep. Ciência da Computação -- Universidade de Brasília (UnB)\\
   CIC0231 - Laboratório de Circuitos Lógicos\\
   \today
-  \email{aluno1@gmail.com, aluno2@hotmail.com,  aluno3@aluno.unb.br}
+  \email{allanvictor.almeida@gmail.com, caiocesar20032003@gmail.com, daniloalvesjob@gmail.com}
 }
 
 \begin{document} 
@@ -52,24 +52,36 @@ Portas Lógicas: NAND, NOR, e XOR}
 
 \selectlanguage{american}
  \begin{abstract}
-Write a short summary of the report here. It should be written in a way that summarizes what the experiment was and the main results.
+    In this experiment, the fundamental concepts, symbols, and truth tables of NAND, NOR, XOR, and XNOR logic gates were studied. Through De Morgan's theorems and their algebraic equivalences, the universality of NAND and NOR gates was demonstrated, proving that any Boolean function can be implemented using exclusively one of these two gate types. Furthermore, the loading factors (fan-in and fan-out) applicable to TTL family integrated circuits were analyzed. The practical phase involved experimental setups to implement a 3-input NAND gate, construct an XOR function using only NAND gates, and expand the XOR function to four inputs using the 74HC86 IC, thereby experimentally validating the theoretically predicted logic behaviors.
  \end{abstract}
 \selectlanguage{brazil}     
-    
  \begin{resumo} 
-  Escreva aqui um pequeno resumo do relatório. Deve ser escrito de maneira que se entenda de forma resumida o que foi o experimento e os resultados principais.
+    Neste experimento, foram estudados os conceitos fundamentais, símbolos e tabelas da verdade das portas lógicas NAND, NOR, XOR e XNOR. Por meio dos Teoremas de De Morgan e de suas equivalências algébricas, foi demonstrado o caráter universal das portas NAND e NOR, comprovando que qualquer função booleana pode ser implementada utilizando-se exclusivamente um desses dois tipos de porta. Além disso, analisaram-se os fatores de carga (fan-in e fan-out) aplicados aos circuitos integrados da família TTL. Na etapa prática, realizaram-se montagens experimentais para a implementação de uma porta NAND de 3 entradas, a construção da função XOR utilizando apenas portas NAND, e a expansão da função XOR para 4 entradas por meio do CI 74HC86, validando experimentalmente os comportamentos lógicos previstos teoricamente.
  \end{resumo}
 
 
 \section{Introdução}
 \label{sec:Introducao}
 
-Deve ser um texto próprio do aluno que contextualize os assuntos a serem trabalhados no experimento, bem como os objetivos e materiais utilizados. Aqui temos um exemplo de como citar a bibliografia consultada \cite{boulic:91} \cite{smith:99}.
-
+As portas lógicas são os elementos básicos dos circuitos 
+digitais. As portas NAND e NOR caracterizam-se pelo seu caráter universal, pois os Teoremas de De Morgan provam ser possível 
+implementar todas as operações lógicas (AND, OR e NOT) usando apenas um desses dois tipos 
+de porta. Já as portas XOR e XNOR atuam como comparadores e detectores de paridade, sendo que a XOR
+ de $N$ entradas resulta em nível alto ($1$) sempre que houver um número ímpar de entradas em $1$. Do ponto de vista elétrico, 
+ circuitos reais exigem o dimensionamento de parâmetros de carga, como o fan-in (carga consumida pela entrada) 
+ e o fan-out (capacidade da saída de acionar outras portas sem perder o nível lógico).
 \subsection{Objetivos}
 \label{sec:Objetivos}
 
-Descrever aqui os objetivos do experimento.
+Este experimento tem como objetivos:
+\begin{itemize}
+    \item Estudar os conceitos fundamentais, símbolos e tabelas da verdade das portas lógicas NAND, NOR, XOR e XNOR.
+    \item Demonstrar a universalidade das portas NAND e NOR por meio dos Teoremas de De Morgan.
+    \item Analisar os fatores de carga (fan-in e fan-out) aplicáveis aos circuitos integrados.
+    \item Implementar experimentalmente uma porta NAND de 3 entradas.
+    \item Construir uma função XOR utilizando apenas portas NAND.
+    \item Expander a função XOR para 4 entradas usando o CI 74HC86.
+\end{itemize}
 
 \subsection{Materiais} 
 \label{sec:Materiais}
@@ -562,7 +574,7 @@ a tabela de quatro entradas, mas é válido
 a função XOR para qualquer número N de entradas. Dado a associatividade
 e comutatitividade, podem-se agrupar os 0s e 1s em
 pares iguais, os quais retornarão 0. Caso o número de 1s seja ímpar,
-ele não pode ser agrupado com outro 1 e retornar zero, dessa forma
+ele não pode ser agrupado com outro 1 e retornar 0, dessa forma
 determinando a saída como 1.
 
 \noindent Tal propriedade de paridade \cite{parity} possui diversas utilidades, como a construção de somadores
@@ -572,8 +584,11 @@ código de Hamming.
 \section{Conclusões}
 \label{sec:Conclusao}
 
-Concluir o relatório explanando rapidamente o que foi feito e os resultados obtidos, sempre correlacionando com os objetivos do experimento apresentados na Seção~\ref{sec:Objetivos}. 
-
+O experimento comprovou a equivalência entre expressões booleanas
+e a prática em bancada. A universalidade das portas NAND/NOR mostrou-se eficiente
+para simplificação de componentes, e o teste da porta XOR de 4 entradas confirmou seu
+acionamento por contagem ímpar de bits altos. Por fim, compreendeu-se a relevância de
+respeitar os limites de fan-out para garantir a estabilidade das tensões no circuito.
 
 \bibliographystyle{plain}
 \bibliography{relatorio}  %Aqui é a definição do arquivo .bib a ser usado pelas referências
