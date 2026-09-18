@@ -31,20 +31,20 @@
      
 \sloppy
 
-\title{Experimento X\\ 
-Circuitos Combinacionais: Multiplexadores}
+\title{Experimento 3\\ 
+Circuitos Combinacionais: Mapa de Karnaugh}
 
-\author{Grupo G37\\    %%%% LEMBRE-SE DE MUDAR O GRUPO !!!!! %%%%%%
-        Aluno 1, 10/0012345\\
-        Aluno 2,  12/0123456\\
-        Aluno 3, 11/1029881\\
+\author{Grupo B2 - Turma 2\\    %%%% LEMBRE-SE DE MUDAR O GRUPO !!!!! %%%%%%
+        Allan Victor Almeida Faria, 261010546\\
+        Caio César Gonçalves Ribeiro, 211038217\\
+        Danilo Alves Ribeiro, 242003754\\
 }
 
 
 \address{Dep. Ciência da Computação -- Universidade de Brasília (UnB)\\
   CIC0231 - Laboratório de Circuitos Lógicos\\
   \today
-  \email{aluno1@gmail.com, aluno2@hotmail.com,  aluno3@aluno.unb.br}
+  \email{allanvictor.almeida@gmail.com, caiocesar20032003@gmail.com,  daniloalvesjob@gmail.com}
 }
 
 \begin{document} 
@@ -52,36 +52,63 @@ Circuitos Combinacionais: Multiplexadores}
 
 \selectlanguage{american}
  \begin{abstract}
-Write a short summary of the report here. It should be written in a way that summarizes what the experiment was and the main results.
- \end{abstract}
+The following work employs mechanisms for simplifying logic functions and circuits, such as 
+K-Maps
+and modularization and reuse of sub-circuits, to reduce redundancies and
+ enable the construction of more compact and efficient combinational electronic circuits.    
+\end{abstract}
 \selectlanguage{brazil}     
     
- \begin{resumo} 
-  Escreva aqui um pequeno resumo do relatório. Deve ser escrito de maneira que se entenda de forma resumida o que foi o experimento e os resultados principais.
+ \begin{resumo}
+    No seguinte trabalho, utiliza-se mecanismos de simplificação de
+    funções e circuitos lógicos, a saber, o Mapa de Karnaugh
+    e modularização e reutilização de sub-circuitos, para reduzir
+    redundâncias e possibilitar a construção de circuitos eletrônicos
+    combinacionais mais compactos e eficientes.
  \end{resumo}
 
 
 \section{Introdução}
 \label{sec:Introducao}
 
-Deve ser um texto próprio do aluno que contextualize os assuntos a serem trabalhados no experimento, bem como os objetivos e materiais utilizados. Aqui temos um exemplo de como citar a bibliografia consultada \cite{boulic:91} \cite{smith:99}.
+Circuitos reais e efetivos devem dar conta da multiplicidade
+e variedade dos fenômenos do mundo, e não só, mais encontrar
+relações que possibilitem reduzir redundâncias e fornecer 
+soluções mais elegantes para os problemas solucionados
+pela eletrônica. Tal necessidade faz com que
+os circuitos digitais escalem para muitas variáveis, o que torna
+o tratamento de funções por métodos puramente algébricos inescalável. 
+
+\noindent Nesse sentido,
+o Mapa de Karnaugh oferece um mecanismo visual (topológico, em uma visão matemática)
+para simplificar expressões lógicas, sendo especialmente eficaz no tratamento
+de funções de duas a cinco variáveis. Além dele, a modularização de sub-circuitos
+que se comunicam através de uma interface fornece uma maneira de resolver problemas
+complexos através de circuitos mais simples. Usaremos os dois mecanismos para
+construir circuitos de maioria e minoria, e, ao final, combiná-los.
+
 
 \subsection{Objetivos}
 \label{sec:Objetivos}
 
-Descrever aqui os objetivos do experimento.
+\begin{itemize}
+    \item Implantar um circuito de maioria usando apenas portas NAND
+    \item Projetar e implantar um circuito de minoria utlizando-se de mapas de Karnaugh
+    \item Construir um comparador de igualdade vetorial a partir de sub-circuitos modularizados
+\end{itemize}
 
 \subsection{Materiais} 
 \label{sec:Materiais}
 Neste experimento foram utilizados os seguintes materiais e equipamentos:
 \begin{itemize}
-    \item Painel Digital
 
     \item \textit{Protoboard}
     
     \item Fios
+
+    \item Kit de Eletrônica Digital
     
-    \item Portas Lógicas AND e NAND
+    \item CIs NAND2, NAND3, NOR2, AND3, NAND4, OR2, NOT
 \end{itemize}
 
 \section{Procedimentos e Resultados}
@@ -163,8 +190,11 @@ Dica: Use pesquisa na Internet para tirar as dúvidas sobre edição em \LaTeX .
 \section{Conclusões}
 \label{sec:Conclusao}
 
-Concluir o relatório explanando rapidamente o que foi feito e os resultados obtidos, sempre correlacionando com os objetivos do experimento apresentados na Seção~\ref{sec:Objetivos}. 
-
+Os experimentos realizados corresponderam à teoria. A utilização de mapas de Karnaugh
+provou-se aliada na simplificação do segundo circuito, comprovando assim sua aplicação
+na realidade. Devido a falta de tempo, o grupo não conseguiu gravar os resultados
+do terceiro experimento, embora a corretude dos experimentos antecessores dê uma boa
+garantia da validade deste.
 
 \bibliographystyle{sbc}
 \bibliography{relatorio}  %Aqui é a definição do arquivo .bib a ser usado pelas referências
