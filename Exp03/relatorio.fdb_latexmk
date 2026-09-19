@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex relatorio"] 0 "relatorio.aux" "relatorio.bbl" "relatorio" 1789771605.31912 -1
-  "./relatorio.bib" 1788360445.83456 1005 a5ca6b2b8462c7f3d6bd0d22d7147d03 ""
-  "./sbc.bst" 1788360445.83456 21864 a668496cca21cfdd211f7fb5f0d57565 ""
-  "relatorio.aux" 1789771605.22091 2279 51bcbc2c5a982a71a4ee34510d71cc68 "pdflatex"
+["bibtex relatorio"] 1789779455.40244 "relatorio.aux" "relatorio.bbl" "relatorio" 1789779456.20177 0
+  "./relatorio.bib" 1789777156.73145 819 8184302b880f2b074b8219a0b4d33699 ""
+  "/usr/share/texmf-dist/bibtex/bst/base/plain.bst" 1775415801 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
+  "relatorio.aux" 1789779456.07049 3022 2190368266643e5c9b2b5f167ffda2e8 "pdflatex"
   (generated)
   "relatorio.bbl"
   "relatorio.blg"
   (rewritten before read)
-["pdflatex"] 1789771604.69687 "/home/ccaesar/LCL/Exp03/relatorio.tex" "relatorio.pdf" "relatorio" 1789771605.31936 0
-  "/home/ccaesar/LCL/Exp03/relatorio.tex" 1789771604.39973 7985 c19b4f82fdb31b507df81cf086227cee ""
+["pdflatex"] 1789779455.42343 "/home/ccaesar/LCL/Exp03/relatorio.tex" "relatorio.pdf" "relatorio" 1789779456.20213 0
+  "/home/ccaesar/LCL/Exp03/relatorio.tex" 1789779454.31508 9708 a441618e7e443859b5fb4ba8b0542a4d ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1775415801 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1775415801 960 379cc0019370a9e0208a0a3f949f847a ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1775415801 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -34,9 +34,9 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1775415801 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1775415801 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1775415801 36741 fa121aac0049305630cf160b86157ee4 ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1775415801 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1775415801 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1775415801 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1775415801 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1775415801 45758 19968a0990191524e34e1994d4a31cb6 ""
   "/usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb" 1775415801 35941 f27169cc74234d5bd5e4cca5abafaabb ""
   "/usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1775415801 44729 811d6c62865936705a31c797a1d5dada ""
@@ -116,11 +116,14 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788963450 328759 3d8ba6ffe9a13491c7e7884ddcacc692 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788963416 2970202 9d6131765ed01d8dc3085bed07e27c25 ""
   "caption2.sty" 1788360445.83439 15190 35c3352faab63b28086162350d49d218 ""
-  "fig1.jpg" 1788360445.83456 39933 79da1f77b4599c71378d76c4aec374c6 ""
-  "relatorio.aux" 1789771605.22091 2279 51bcbc2c5a982a71a4ee34510d71cc68 "pdflatex"
-  "relatorio.bbl" 1789771194.81128 304 646ea59d1c465d1c1f64cc77ff56f9d8 "bibtex relatorio"
-  "relatorio.out" 1789771605.22291 911 841c4f461206f09565efa168d8e8e46c "pdflatex"
-  "relatorio.tex" 1789771604.39973 7985 c19b4f82fdb31b507df81cf086227cee ""
+  "karnaugh.png" 1789778689.96271 44547 372eb153f1bb1eddbeef0c39e0ab19fb ""
+  "q1real.png" 1789772459.96535 294099 4a87bc8c1cd2b8850ef86e9be79ab4b5 ""
+  "q2real.png" 1789772726.03085 147652 93858c980c3532aa23329e8e3014806b ""
+  "q3real.png" 1789772751.82972 224334 b894dd85b560fc7307cae47d32526eb2 ""
+  "relatorio.aux" 1789779456.07049 3022 2190368266643e5c9b2b5f167ffda2e8 "pdflatex"
+  "relatorio.bbl" 1789779455.41849 184 2fde8ee1f8b49a6f11920537c2507d5b "bibtex relatorio"
+  "relatorio.out" 1789779456.07249 1062 5236391df607ddff60e13dcb255f49ad "pdflatex"
+  "relatorio.tex" 1789779454.31508 9708 a441618e7e443859b5fb4ba8b0542a4d ""
   "sbc-template.sty" 1788360445.83456 5285 fb8f2a32de10fa23e40f15acd9749a09 ""
   (generated)
   "relatorio.aux"

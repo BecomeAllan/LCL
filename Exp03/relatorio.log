@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.9)  18 SEP 2026 19:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.9)  18 SEP 2026 21:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -278,10 +278,10 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count315
 ) (./relatorio.aux
 Package babel Info: 'brazil' activates 'portuges' shorthands.
-(babel)             Reported on input line 8.
+(babel)             Reported on input line 9.
  (/usr/share/texmf-dist/tex/generic/babel/locale/en/babel-american.tex)
 Package babel Info: Importing data for american
-(babel)             from babel-en-US.ini. Reported on input line 9.
+(babel)             from babel-en-US.ini. Reported on input line 10.
 )
 \openout1 = `relatorio.aux'.
 
@@ -383,45 +383,53 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-<fig1.jpg, id=43, 254.3904pt x 232.2276pt>
-File: fig1.jpg Graphic file (type jpg)
-<use fig1.jpg>
-Package pdftex.def Info: fig1.jpg  used on input line 126.
-(pdftex.def)             Requested size: 213.39568pt x 194.81471pt.
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 127.
+<q1real.png, id=49, 550.055pt x 351.3125pt>
+File: q1real.png Graphic file (type png)
+<use q1real.png>
+Package pdftex.def Info: q1real.png  used on input line 157.
+(pdftex.def)             Requested size: 320.0935pt x 204.44754pt.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 158.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
-[]\OT1/ptm/m/n/12 Aqui te-mos um exem-plo de como ci-tar uma URL na bi-bli-o-gra-
- []
-
-[2 <./fig1.jpg>] (./relatorio.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 4--8
-[][]$\OT1/pcr/m/n/12 https : / / en . wikipedia . org / w / index . php ? title = SystemVerilog &
- []
-
-) [3] [4] (./relatorio.aux)
+) [2 <./q1real.png (PNG copy)>]
+<karnaugh.png, id=62, 306.14375pt x 312.16624pt>
+File: karnaugh.png Graphic file (type png)
+<use karnaugh.png>
+Package pdftex.def Info: karnaugh.png  used on input line 232.
+(pdftex.def)             Requested size: 213.39568pt x 217.5908pt.
+ [3]
+<q2real.png, id=71, 262.9825pt x 316.18124pt>
+File: q2real.png Graphic file (type png)
+<use q2real.png>
+Package pdftex.def Info: q2real.png  used on input line 253.
+(pdftex.def)             Requested size: 213.39568pt x 256.57338pt.
+ [4 <./karnaugh.png> <./q2real.png>]
+<q3real.png, id=81, 394.47375pt x 336.25626pt>
+File: q3real.png Graphic file (type png)
+<use q3real.png>
+Package pdftex.def Info: q3real.png  used on input line 277.
+(pdftex.def)             Requested size: 213.39568pt x 181.89891pt.
+ (./relatorio.bbl) [5 <./q3real.png>] [6] (./relatorio.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `relatorio.out' has not changed.
-(rerunfilecheck)             Checksum: 841C4F461206F09565EFA168D8E8E46C;911.
+(rerunfilecheck)             Checksum: 5236391DF607DDFF60E13DCB255F49AD;1062.
  ) 
 Here is how much of TeX's memory you used:
- 12602 strings out of 468890
- 195785 string characters out of 5453695
- 644686 words of memory out of 5000000
- 41111 multiletter control sequences out of 15000+600000
- 647528 words of font info for 75 fonts, out of 8000000 for 9000
+ 12631 strings out of 468890
+ 196242 string characters out of 5453695
+ 652743 words of memory out of 5000000
+ 41132 multiletter control sequences out of 15000+600000
+ 645428 words of font info for 71 fonts, out of 8000000 for 9000
  352 hyphenation exceptions out of 8191
- 75i,10n,79p,341b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (4 pages, 164005 bytes).
+ 75i,10n,79p,271b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (6 pages, 882620 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
- 62 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 151 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

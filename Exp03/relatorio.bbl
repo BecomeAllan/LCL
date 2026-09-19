@@ -1,9 +1,8 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
 
-\bibitem[Wikipedia 2016]{systemverilog}
-Wikipedia (2016).
-\newblock Systemverilog --- wikipedia{,} the free encyclopedia.
-\newblock \url{https://en.wikipedia.org/w/index.php?title=SystemVerilog&oldid=728456019}.
-\newblock [Online; accessed 9-July-2016].
+\bibitem{wakerly90}
+John~F. Wakerly.
+\newblock {\em Digital Design: Principles and Practices}.
+\newblock Pearson, 3rd edition, 1990.
 
 \end{thebibliography}

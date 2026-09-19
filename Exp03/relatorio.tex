@@ -82,7 +82,7 @@ o tratamento de funções por métodos puramente algébricos inescalável.
 \noindent Nesse sentido,
 o Mapa de Karnaugh oferece um mecanismo visual (topológico, em uma visão matemática)
 para simplificar expressões lógicas, sendo especialmente eficaz no tratamento
-de funções de duas a cinco variáveis. Além dele, a modularização de sub-circuitos
+de funções de duas a cinco variáveis\cite{wakerly90}. Além dele, a modularização de sub-circuitos
 que se comunicam através de uma interface fornece uma maneira de resolver problemas
 complexos através de circuitos mais simples. Usaremos os dois mecanismos para
 construir circuitos de maioria e minoria, e, ao final, combiná-los.
@@ -114,78 +114,170 @@ Neste experimento foram utilizados os seguintes materiais e equipamentos:
 \section{Procedimentos e Resultados}
 \label{sec:Procedimentos}
 
-Deve conter a descrição completa de cada item solicitado no experimento, como foram realizados, problemas encontrados e resultados obtidos (esperados ou não). Deve conter figuras, fotos, gráficos, tabelas e links clicáveis para os vídeos solicitados.
+Foram montados os três circuitos objetivados no roteiro do experimento.
+Nesse sentido, os dois primeiros itens foram combinados para implementação
+do terceiro experimento. De modo geral, a alimentação para os circuitos foi
+fornecida pelo Kit de Eletrônica, e as saídas foram verificadas com ajuda
+visual dos Leds do próprio Kit.
 
-\subsection{Multiplexador de 4 entradas}
+\subsection{Circuito de Maioria}
 \label{sec:Mux}
 
-Descrever o experimento realizado. Sempre que colocar uma figura, deve-se explicar o que o leitor deve ver, ou uma análise logo após a figura. 
+Consiste em um circuito cuja saída
+é 1 apenas quando a maior parte das
+entradas é 1. Isto é, para um circuito
+de quatro entradas, é necessário e suficiente
+que três entradas sejam 1:
+
+\begin{equation}
+    Y = ABD + ABC + BCD + ACD
+\end{equation}
+
+Aplicando o teorema de De Morgan, consegue-se
+realizar tal circuito com quatro portas NAND3
+e uma NAND4:
+
+\begin{equation}
+    Y = \overline{
+        \overline{ABD}
+        \cdot
+        \overline{ABC}
+        \cdot
+        \overline{BCD}
+        \cdot
+        \overline{ACD}
+    }
+\end{equation}
+
+
+Dessa maneira, o circuito real foi montado assim:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.5\textwidth]{fig1.jpg}
-    \caption{Exemplo de como colocar a legenda em uma figura.}
-    \label{fig:exemplo}
+    \includegraphics[width=.75\textwidth]{q1real.png}
+    \caption{Circuito}
+    \label{fig:nand4}
 \end{figure}
 
-A Figura~\ref{fig:exemplo} apresenta um exemplo de como usar e citar uma figura. Sempre comente cada figura no texto.
-
-Aqui temos um exemplo de como citar uma URL na bibliografia~\cite{systemverilog}.
-
-Aqui temos um exemplo de como criar um hiperlink. Veja neste
-\href{https://www.youtube.com/watch?v=itWbXy0Qzw0}{link} um exemplo de vídeo publicado. Ao contrário do vídeo deste exemplo, sempre inicie o vídeo apresentando o grupo (nome e semestre), narrando o que é o experimento, os objetivos e descreva o que está sendo feito no vídeo.
-
-Sempre identifique no site do vídeo:
-\begin{itemize}
-    \item o experimento: Experimento 7;
-    \item o semestre: 2022/1;
-    \item a disciplina: CIC0231 - Laboratório de Circuitos Lógicos;
-    \item a universidade: Universidade de Brasília (UnB);
-    \item o grupo: Grupo G37;
-    \item os nomes dos componentes do grupo.
-\end{itemize}
-
-Desta forma se facilita uma busca pelo vídeo. É apresentado acima como fazer uma listagem não numerada.
-
-\subsection{Demultiplexador}
-\label{sec:Demux}
-
-Este é outro item do experimento. Aqui temos um exemplo de como construir e citar uma tabela, conforme mostrado na Tabela~\ref{tab:resultados}.
+Feita a simulação, cuja gravação pode ser
+vista \href{https://drive.google.com/file/d/10QwYQWrQXRwsCLnVEk2SVldv0WX9bulO/view?usp=drive_link}{aqui}, verificou-se a identidade
+entre a tabela teórica e a medida, comprovando 
+a corretude do nosso circuito.
 
 \begin{table}[H]
     \centering
-    \caption{Exemplo de como construir uma tabela.}
-    \label{tab:resultados}
-    \begin{tabular}{|c|c|c|c|c|c|c|c|}
-    \cline{2-7}
-    \multicolumn{1}{c}{} & \multicolumn{3}{|c|}{Fase 1} & \multicolumn{3}{c|}{Fase 2} & \multicolumn{1}{c}{} \\
-    \hline
-    Experimento & $n_g$ & $n_l$ & $n_t$ & $n_g$ & $n_l$ & $n_t$ & $t(s)$ \\
-    \hline
-    1 bit full adder & 8.16 & 3.8 & 47.6 & 5.03 & 3.0 & 25.93 & 99.13 \\
-    2 bits full adder & 18.06 & 5.16 & 107.13 & 11.06 & 4.9 & 60.06 & 709.56 \\
-    2 bits multiplier & 14.2 & 4.03 & 74.33 & 7.7 & 2.2 & 37.53 & 357.76 \\
-    7 segment decoder & 47.53 & 5.83 & 270.46 & 32.86 & 5.0 & 176.4 & 740.63 \\
-    Karnaugh 1 bit full adder & 19.0 & 6.0 & 102.0 & 5.03 & 3.0 & 24.8 & 130.73 \\
-    \hline
+    \caption{Tabela Verdade do Circuito de Maioria de 4 Entradas}
+    \label{tab:maioria-4-entradas}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        A & B & C & D & Y \\ \hline
+        0 & 0 & 0 & 0 & 0 \\ \hline
+        0 & 0 & 0 & 1 & 0 \\ \hline
+        0 & 0 & 1 & 0 & 0 \\ \hline
+        0 & 0 & 1 & 1 & 0 \\ \hline
+        0 & 1 & 0 & 0 & 0 \\ \hline
+        0 & 1 & 0 & 1 & 0 \\ \hline
+        0 & 1 & 1 & 0 & 0 \\ \hline
+        0 & 1 & 1 & 1 & 1 \\ \hline
+        1 & 0 & 0 & 0 & 0 \\ \hline
+        1 & 0 & 0 & 1 & 0 \\ \hline
+        1 & 0 & 1 & 0 & 0 \\ \hline
+        1 & 0 & 1 & 1 & 1 \\ \hline
+        1 & 1 & 0 & 0 & 0 \\ \hline
+        1 & 1 & 0 & 1 & 1 \\ \hline
+        1 & 1 & 1 & 0 & 1 \\ \hline
+        1 & 1 & 1 & 1 & 1 \\ \hline
     \end{tabular}
-
 \end{table}
 
-Aqui devemos colocar uma apresentação e análise da tabela, explicando ao leitor o que se pretende mostrar. A Tabela~\ref{tab:resultados} mostra os tempos de propagação dos diferentes circuitos testados.
+\subsection{Circuito de Minoria}
 
-As equações devem fazer parte do texto, como 
+Consiste em um circuito cuja saída é 1
+apenas quando a maior parte das entradas é
+0. Pode-se deduzir a expressão mínima a partir
+da tabela verdade:
+
+\begin{table}[H]
+    \centering
+    \caption{Tabela Verdade do Circuito de Decisão de Minoria}
+    \label{tab:minoria}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        D & C & B & A & Y \\ \hline
+        0 & 0 & 0 & 0 & 1 \\ \hline
+        0 & 0 & 0 & 1 & 1 \\ \hline
+        0 & 0 & 1 & 0 & 1 \\ \hline
+        0 & 0 & 1 & 1 & 0 \\ \hline
+        0 & 1 & 0 & 0 & 1 \\ \hline
+        0 & 1 & 0 & 1 & 0 \\ \hline
+        0 & 1 & 1 & 0 & 0 \\ \hline
+        0 & 1 & 1 & 1 & 0 \\ \hline
+        1 & 0 & 0 & 0 & 1 \\ \hline
+        1 & 0 & 0 & 1 & 0 \\ \hline
+        1 & 0 & 1 & 0 & 0 \\ \hline
+        1 & 0 & 1 & 1 & 0 \\ \hline
+        1 & 1 & 0 & 0 & 0 \\ \hline
+        1 & 1 & 0 & 1 & 0 \\ \hline
+        1 & 1 & 1 & 0 & 0 \\ \hline
+        1 & 1 & 1 & 1 & 0 \\ \hline
+    \end{tabular}
+\end{table}
+
+Da tabela, podemos preencher o mapa de Karnaugh
+para chegar na expressão mínima:
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{karnaugh.png}
+    \caption{Expressão minimizada}
+    \label{fig:karnaugh}
+\end{figure}
 
 \begin{equation}
-\label{eq:logica}
-    Y=AB+\bar{B}\bar{A}
+    Y_2 =
+    \overline{D}\,\overline{C}\,\overline{B}
+    + \overline{D}\,\overline{C}\,\overline{A}
+    + \overline{D}\,\overline{B}\,\overline{A}
+    + \overline{C}\,\overline{B}\,\overline{A}
 \end{equation}
 
-\noindent onde $A$ e $B$ são as variáveis de entrada. $Y$ a variável de saída. Podemos citar como Equação~\ref{eq:logica}.
 
-Em cada item, após a apresentação dos resultados obtidos, sempre faça uma análise crítica desses resultados.
+A partir disso, foi montado o circuito físico e também
+gravado o preenchimento da tabela verdade \href{https://drive.google.com/file/d/1kZFUdpag3f2Ry3ZOJtsxl__zzS4Iap4R/view?usp=drive_link}{aqui},
+o qual revelou a identidade entre a tabela verdade teórica e mensurada, determinando que nosso circuito
+satisfaz as condições para ser um circuito de decisão de minoria.
 
-Dica: Use pesquisa na Internet para tirar as dúvidas sobre edição em \LaTeX .
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{q2real.png}
+    \caption{Circuito montado}
+    \label{fig:q2}
+\end{figure}
+
+\subsection{Circuito de Igualdade}
+
+Consiste em circuito cuja saída é 1 apenas
+quando o número de 0's e 1's nas entradas
+é igual. Tal condição equivale, nesse contexto,
+a situação em que ambas as saídas dos circuitos de maioria
+e minoria são 0. Basta processarmos as saídas por uma porta NOR
+para obtermos o resultado.
+
+\begin{equation}
+    Y = \overline{Y_1 + Y_2}
+\end{equation} 
+
+O circuito foi montado, como dito anteriormente, combinando os circuitos anteriores,
+contudo, não foi possível gravar a medição devido à falta de tempo, embora - dada a 
+simplicidade da solução - estejamos seguros da corretude do experimento.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{q3real.png}
+    \caption{Circuito montado}
+    \label{fig:q3}
+\end{figure}
 
 \section{Conclusões}
 \label{sec:Conclusao}
@@ -196,7 +288,7 @@ na realidade. Devido a falta de tempo, o grupo não conseguiu gravar os resultad
 do terceiro experimento, embora a corretude dos experimentos antecessores dê uma boa
 garantia da validade deste.
 
-\bibliographystyle{sbc}
+\bibliographystyle{plain}
 \bibliography{relatorio}  %Aqui é a definição do arquivo .bib a ser usado pelas referências
 
 
