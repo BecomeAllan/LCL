@@ -87,7 +87,7 @@ de sub-circuitos reutilizáveis construídos a partir de circuitos nativos.
 \subsection{Objetivos}
 \label{sec:Objetivos}
 
-Descrever aqui os objetivos do experimento.
+Implementar e simular, no Quartus II, comparadores com entradas vetoriais.
 
 \subsection{Materiais} 
 \label{sec:Materiais}
@@ -100,18 +100,152 @@ Neste experimento foram utilizados os seguintes materiais e equipamentos:
 \section{Procedimentos e Resultados}
 \label{sec:Procedimentos}
 
-Deve conter a descrição completa de cada item solicitado no experimento, como foram realizados, problemas encontrados e resultados obtidos (esperados ou não). Deve conter figuras, fotos, gráficos, tabelas e links clicáveis para os vídeos solicitados.
-
-\subsection{Multiplexador de 4 entradas}
+\subsection{Comparador de 3 bits de Igualdade}
 \label{sec:Mux}
 
+Para fazer tal comparador, devemos comparar bit-a-bit,
+em uma função ideal que retorne '1' se e somente se
+os dois bits
+comparados forem iguais. Após isso, basta submeter as saídas
+desses operadores a uma AND de três portas.
+
+O operador lógico binário cuja saída é 1 apenas quando
+as entradas são iguais é o XNOR\cite{wakerly90}.
+
+\begin{table}[H]
+
+    \centering
+
+    \caption{Tabela Verdade da função XNOR}
+
+    \label{tab:tabela-xnor}
+
+    \begin{tabular}{|c|c|c|}
+
+        \hline
+
+        A & B & Z \\
+
+        \hline
+
+        0 & 0 & 1 \\
+
+        \hline
+
+        0 & 1 & 0 \\
+
+        \hline
+
+        1 & 0 & 0 \\
+
+        \hline
+
+        1 & 1 & 1 \\
+
+        \hline
+
+    \end{tabular}
+
+\end{table}
+
+Dessa forma, tal expressão equivale, em mintermos, a:
+
+\begin{equation}
+    S = AB + \overline{A}.\overline{B}
+\end{equation}
+
+
+Em NAND, tem-se:
+\[
+Z =
+\overline{
+    \overline{
+        \overline{AA}\,\overline{BB}
+    }
+    \,
+    \overline{AB}
+}
+\]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.75\textwidth]{image.png}
+    \caption{NXOR com NAND}
+    \label{fig:q1}
+\end{figure}
+
+
+A confecção de uma NAND de três, implementada no Experimento 3,
+resulta no circuito:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.75\textwidth]{nand3.png}
+    \caption{NAND3}
+    \label{fig:q2}
+\end{figure}
+
+Dessa forma, nosso circuito completo será:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.75\textwidth]{joj.png}
+    \caption{Circuito Completo}
+    \label{fig:q3}
+\end{figure}
+
+
+\subsection{Comparador de Palavras de 2 Bits}
+
+Além da noção de igualdade, agora teremos saídas
+para verificar se um número é maior ou menor a outro, 
+seguindo uma implementação modular, na qual o comparador vetorial
+é construído a partir do comparador de bits individuais.
+
+Em um sistema binário, para um bit ser maior que outro, basta que
+este seja '0' e aquele seja '1'. O raciocínio é análogo para o 
+caso de "menor que", logo:
+
+\begin{equation}
+    y1 = A\overline{B}
+\end{equation}
+
+\begin{equation}
+    y2 = \overline{A\oplus B}
+\end{equation}
+
+\begin{equation}
+    y3 = \overline{A}B
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.75\textwidth]{comp1.png}
+    \caption{Comparador de 1 Bit}
+    \label{fig:q4}
+\end{figure}
+
+
+No circuito final, sempre são testados os bits mais significativos.
+Caso estes sejam iguais, o circuito dos bits menos significatios é habilitado.
+Seguindo o circuito disponibilizado no roteiro\cite{roteiro}, tem-se:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.75\textwidth]{comp1.png}
+    \caption{Comparador de 2 Bits}
+    \label{fig:q5}
+\end{figure}
 
 
 \section{Conclusões}
 \label{sec:Conclusao}
 
-Concluir o relatório explanando rapidamente o que foi feito e os resultados obtidos, sempre correlacionando com os objetivos do experimento apresentados na Seção~\ref{sec:Objetivos}. 
-\cite{boulic:91}
+Os experimentos conduzidos confirmaram a teoria. Nesse sentido, a distinção
+entre simulação funcional e temporal ficou clara ao diagnosticar os atrasos
+desta última na simulação do segundo comparador. De maneira geral, o uso de
+ferramentas de software provou-se importantíssimo para construção e verificação
+de circuitos mais complexos. 
 
 \bibliographystyle{plain}
 \bibliography{relatorio}  %Aqui é a definição do arquivo .bib a ser usado pelas referências

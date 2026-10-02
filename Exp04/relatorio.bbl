@@ -1,8 +1,13 @@
 \begin{thebibliography}{1}
 
-\bibitem{boulic:91}
-R.~Boulic and O.~Renault.
-\newblock 3d hierarchies for animation.
-\newblock In Nadia Magnenat-Thalmann and Daniel Thalmann, editors, {\em New Trends in Animation and Visualization}. John Wiley {\&} Sons ltd., 1991.
+\bibitem{roteiro}
+Roteiro.
+\newblock \url{https://aprender3.unb.br/pluginfile.php/3416792/mod_resource/content/8/roteiro4P.pdf}, 2026.
+\newblock [Online; accesseed 2-October-2026].
+
+\bibitem{wakerly90}
+John~F. Wakerly.
+\newblock {\em Digital Design: Principles and Practices}.
+\newblock Pearson, 3rd edition, 1990.
 
 \end{thebibliography}
