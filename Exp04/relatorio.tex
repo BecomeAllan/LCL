@@ -194,6 +194,27 @@ Dessa forma, nosso circuito completo será:
     \label{fig:q3}
 \end{figure}
 
+Realizando a simulação funcional, temos:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.75\textwidth]{sim1fun.png}
+    \caption{Simulação Funcional}
+    \label{fig:x}
+\end{figure}
+
+Percebe-se que a saída só é '1' quando
+os vetores são iguais, comprovando a validade
+do modelo. Em relação à análise temporal, a 
+qual leva em conta os atrasos das portas lógicas, temos:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.75\textwidth]{sim1temp.png}
+    \caption{Simulação Temporal}
+    \label{fig:y}
+\end{figure}
+
 
 \subsection{Comparador de Palavras de 2 Bits}
 
@@ -225,6 +246,24 @@ caso de "menor que", logo:
     \label{fig:q4}
 \end{figure}
 
+A simulação funcional do circuito nos dá:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.75\textwidth]{sim2fun.png}
+    \caption{Simulação Funcional}
+    \label{fig:b}
+\end{figure}
+
+Já a simulação temporal:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.75\textwidth]{sim2temp.png}
+    \caption{Simulação Temporal}
+    \label{fig:a}
+\end{figure}
+
 
 No circuito final, sempre são testados os bits mais significativos.
 Caso estes sejam iguais, o circuito dos bits menos significatios é habilitado.
@@ -232,7 +271,7 @@ Seguindo o circuito disponibilizado no roteiro\cite{roteiro}, tem-se:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.75\textwidth]{comp1.png}
+    \includegraphics[width=.75\textwidth]{comp.png}
     \caption{Comparador de 2 Bits}
     \label{fig:q5}
 \end{figure}

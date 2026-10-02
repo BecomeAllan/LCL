@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex relatorio"] 1790920099.81584 "relatorio.aux" "relatorio.bbl" "relatorio" 1790920100.98225 0
+["bibtex relatorio"] 1790985379.3366 "relatorio.aux" "relatorio.bbl" "relatorio" 1790985381.098 0
   "./relatorio.bib" 1790918697.23505 701 39f9a4fb7e1dc5b378b0eed4428ca38d ""
   "/usr/share/texmf-dist/bibtex/bst/base/plain.bst" 1775415801 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "relatorio.aux" 1790920100.87529 2845 45cc27a79dbea80c43964cacf6ce2d13 "pdflatex"
+  "relatorio.aux" 1790985380.99514 3609 afcda0bd2ee4757f0a9349e369cdc2d6 "pdflatex"
   (generated)
   "relatorio.bbl"
   "relatorio.blg"
   (rewritten before read)
-["pdflatex"] 1790920099.83831 "/home/ccaesar/LCL/Exp04/relatorio.tex" "relatorio.pdf" "relatorio" 1790920100.9827 0
-  "/home/ccaesar/LCL/Exp04/relatorio.tex" 1790920098.36767 7450 128cfe17b36660d6ebf689e860d1bc95 ""
+["pdflatex"] 1790985379.36054 "/home/ccaesar/LCL/Exp04/relatorio.tex" "relatorio.pdf" "relatorio" 1790985381.09822 0
+  "/home/ccaesar/LCL/Exp04/relatorio.tex" 1790985377.40511 8389 22f1105e2e5ec50a96ec96f9e217a38a ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1775415801 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1775415801 960 379cc0019370a9e0208a0a3f949f847a ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1775415801 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -116,15 +116,20 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788963450 328759 3d8ba6ffe9a13491c7e7884ddcacc692 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788963416 2970202 9d6131765ed01d8dc3085bed07e27c25 ""
   "caption2.sty" 1790891504.37864 15190 35c3352faab63b28086162350d49d218 ""
+  "comp.png" 1790919958.54397 48546 81748c1661514c1e3615b083a72a4844 ""
   "comp1.png" 1790919755.16996 44936 d8b3f395cf1fac4650f49081b44217a5 ""
   "image.png" 1790919113.09486 32921 af1b6b673dec45186863106012324dd5 ""
   "joj.png" 1790919474.1407 44694 00515d64fcac6ec098f060856c0f7617 ""
   "nand3.png" 1790919355.86915 23893 7efffbc5ed8402c1c3c1dc4ae4b94fef ""
-  "relatorio.aux" 1790920100.87529 2845 45cc27a79dbea80c43964cacf6ce2d13 "pdflatex"
-  "relatorio.bbl" 1790920099.83328 366 1563f2005e6a6890a08915e19b526665 "bibtex relatorio"
-  "relatorio.out" 1790920100.87729 1047 98fbd1f87178bd733802ce7d54e2f617 "pdflatex"
-  "relatorio.tex" 1790920098.36767 7450 128cfe17b36660d6ebf689e860d1bc95 ""
+  "relatorio.aux" 1790985380.99514 3609 afcda0bd2ee4757f0a9349e369cdc2d6 "pdflatex"
+  "relatorio.bbl" 1790985379.35613 366 1563f2005e6a6890a08915e19b526665 "bibtex relatorio"
+  "relatorio.out" 1790985380.99714 1047 98fbd1f87178bd733802ce7d54e2f617 "pdflatex"
+  "relatorio.tex" 1790985377.40511 8389 22f1105e2e5ec50a96ec96f9e217a38a ""
   "sbc-template.sty" 1790891504.38135 5285 fb8f2a32de10fa23e40f15acd9749a09 ""
+  "sim1fun.png" 1790984335.60156 116009 d847e649593c6be516f03286f73e8a0a ""
+  "sim1temp.png" 1790984612.15655 54902 da2642d8107c21757c18f24a7253628a ""
+  "sim2fun.png" 1790984685.7519 156282 ca3b736531d6b36510932fff53a3d07e ""
+  "sim2temp.png" 1790984740.30834 129392 11d393a6f9e506be610d2e5ba93ed315 ""
   (generated)
   "relatorio.aux"
   "relatorio.log"

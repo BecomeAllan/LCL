@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.9)  2 OCT 2026 02:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.9)  2 OCT 2026 20:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -403,25 +403,44 @@ File: joj.png Graphic file (type png)
 <use joj.png>
 Package pdftex.def Info: joj.png  used on input line 192.
 (pdftex.def)             Requested size: 320.0935pt x 147.6788pt.
-<comp1.png, id=60, 778.91pt x 448.67625pt>
+<sim1fun.png, id=60, 933.4875pt x 269.005pt>
+File: sim1fun.png Graphic file (type png)
+<use sim1fun.png>
+Package pdftex.def Info: sim1fun.png  used on input line 201.
+(pdftex.def)             Requested size: 320.0935pt x 92.24037pt.
+<sim1temp.png, id=61, 867.24pt x 222.8325pt>
+File: sim1temp.png Graphic file (type png)
+<use sim1temp.png>
+Package pdftex.def Info: sim1temp.png  used on input line 213.
+(pdftex.def)             Requested size: 320.0935pt x 82.24612pt.
+ [3 <./nand3.png> <./joj.png> <./sim1fun.png> <./sim1temp.png>]
+<comp1.png, id=74, 778.91pt x 448.67625pt>
 File: comp1.png Graphic file (type png)
 <use comp1.png>
-Package pdftex.def Info: comp1.png  used on input line 223.
+Package pdftex.def Info: comp1.png  used on input line 244.
 (pdftex.def)             Requested size: 320.0935pt x 184.38292pt.
-
-Underfull \vbox (badness 2809) has occurred while \output is active []
-
- [3 <./nand3.png> <./joj.png>]
-File: comp1.png Graphic file (type png)
-<use comp1.png>
-Package pdftex.def Info: comp1.png  used on input line 235.
-(pdftex.def)             Requested size: 320.0935pt x 184.38292pt.
+<sim2fun.png, id=75, 986.68625pt x 411.5375pt>
+File: sim2fun.png Graphic file (type png)
+<use sim2fun.png>
+Package pdftex.def Info: sim2fun.png  used on input line 253.
+(pdftex.def)             Requested size: 320.0935pt x 133.50948pt.
+<sim2temp.png, id=76, 955.57pt x 400.49625pt>
+File: sim2temp.png Graphic file (type png)
+<use sim2temp.png>
+Package pdftex.def Info: sim2temp.png  used on input line 262.
+(pdftex.def)             Requested size: 320.0935pt x 134.15637pt.
+ [4 <./comp1.png> <./sim2fun.png>]
+<comp.png, id=90, 676.5275pt x 452.69125pt>
+File: comp.png Graphic file (type png)
+<use comp.png>
+Package pdftex.def Info: comp.png  used on input line 274.
+(pdftex.def)             Requested size: 320.0935pt x 214.19476pt.
  (./relatorio.bbl
 Underfull \hbox (badness 2359) in paragraph at lines 4--7
 \OT1/pcr/m/n/12 resource / content / 8 / roteiro4P . pdf$[][]\OT1/ptm/m/n/12 , 2026.  [On-line; ac-ces-seed 2-
  []
 
-) [4 <./comp1.png>] [5] (./relatorio.aux)
+[5 <./sim2temp.png (PNG copy)> <./comp.png>]) [6] [7] (./relatorio.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -430,18 +449,18 @@ Package rerunfilecheck Info: File `relatorio.out' has not changed.
 (rerunfilecheck)             Checksum: 98FBD1F87178BD733802CE7D54E2F617;1047.
  ) 
 Here is how much of TeX's memory you used:
- 12641 strings out of 468890
- 196318 string characters out of 5453695
- 641738 words of memory out of 5000000
- 41142 multiletter control sequences out of 15000+600000
+ 12687 strings out of 468890
+ 197016 string characters out of 5453695
+ 641908 words of memory out of 5000000
+ 41182 multiletter control sequences out of 15000+600000
  645943 words of font info for 73 fonts, out of 8000000 for 9000
  352 hyphenation exceptions out of 8191
  75i,10n,79p,696b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (5 pages, 221216 bytes).
+Output written on relatorio.pdf (7 pages, 701624 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 169 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 102 words of extra memory for PDF output out of 10000 (max. 10000000)
 
