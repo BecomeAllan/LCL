@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex relatorio"] 1791836889.02989 "relatorio.aux" "relatorio.bbl" "relatorio" 1791836889.63926 0
-  "./relatorio.bib" 1788360445.83668 1005 a5ca6b2b8462c7f3d6bd0d22d7147d03 ""
-  "./sbc.bst" 1788360445.83668 21864 a668496cca21cfdd211f7fb5f0d57565 ""
-  "relatorio.aux" 1791836889.53118 2406 3fa31fbecbd1b98c59852e49345819fe "pdflatex"
+["bibtex relatorio"] 1792197413.47667 "relatorio.aux" "relatorio.bbl" "relatorio" 1792197415.2006 0
+  "./relatorio.bib" 1791837301.65385 701 39f9a4fb7e1dc5b378b0eed4428ca38d ""
+  "/usr/share/texmf-dist/bibtex/bst/base/plain.bst" 1775415801 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
+  "relatorio.aux" 1792197415.10583 4334 9628f87a1d3b7a5d0f58627946d9d8e2 "pdflatex"
   (generated)
   "relatorio.bbl"
   "relatorio.blg"
   (rewritten before read)
-["pdflatex"] 1791836889.05078 "/home/ccaesar/LCL/Exp05/relatorio.tex" "relatorio.pdf" "relatorio" 1791836889.63972 0
-  "/home/ccaesar/LCL/Exp05/relatorio.tex" 1791836887.34018 6518 6ed4da31948ecd6953c8a212d652117b ""
+["pdflatex"] 1792197413.50232 "/home/ccaesar/LCL/Exp05/relatorio.tex" "relatorio.pdf" "relatorio" 1792197415.20083 0
+  "/home/ccaesar/LCL/Exp05/relatorio.tex" 1792197411.41717 10133 c37d4a93dd54bba4b7cace314084237b ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1775415801 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1775415801 960 379cc0019370a9e0208a0a3f949f847a ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1775415801 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -33,9 +33,6 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1775415801 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1775415801 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1775415801 1120 8b7d695260f3cff42e636090a8002094 ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1775415801 36741 fa121aac0049305630cf160b86157ee4 ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1775415801 35469 70d41d2b9ea31d5d813066df7c99281c ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1775415801 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1775415801 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1775415801 45758 19968a0990191524e34e1994d4a31cb6 ""
   "/usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb" 1775415801 35941 f27169cc74234d5bd5e4cca5abafaabb ""
@@ -116,12 +113,21 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788963450 328759 3d8ba6ffe9a13491c7e7884ddcacc692 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788963416 2970202 9d6131765ed01d8dc3085bed07e27c25 ""
   "caption2.sty" 1788360445.83556 15190 35c3352faab63b28086162350d49d218 ""
-  "fig1.jpg" 1788360445.83668 39933 79da1f77b4599c71378d76c4aec374c6 ""
-  "relatorio.aux" 1791836889.53118 2406 3fa31fbecbd1b98c59852e49345819fe "pdflatex"
-  "relatorio.bbl" 1791836889.04618 789 4ce6edf11934fbafe9e6a340e889c77a "bibtex relatorio"
-  "relatorio.out" 1791836889.53318 911 841c4f461206f09565efa168d8e8e46c "pdflatex"
-  "relatorio.tex" 1791836887.34018 6518 6ed4da31948ecd6953c8a212d652117b ""
+  "demuxhdl.png" 1792194427.94139 22569 7e9facd440cfe51464c731e9af52a5cc ""
+  "funcao7hdl.png" 1792194454.99166 49648 7e86747ffd7a760e582522e639f03e69 ""
+  "mux8.png" 1792194372.01084 13415 b8501a4d52e7d09511086e4d6d6f0b24 ""
+  "relatorio.aux" 1792197415.10583 4334 9628f87a1d3b7a5d0f58627946d9d8e2 "pdflatex"
+  "relatorio.bbl" 1792197413.49382 184 2fde8ee1f8b49a6f11920537c2507d5b "bibtex relatorio"
+  "relatorio.out" 1792197415.10783 1037 3ff5f4b9fbeda8a7ef922171b4ad12f4 "pdflatex"
+  "relatorio.tex" 1792197411.41717 10133 c37d4a93dd54bba4b7cace314084237b ""
   "sbc-template.sty" 1788360445.83668 5285 fb8f2a32de10fa23e40f15acd9749a09 ""
+  "somadorhdl.png" 1792194398.68202 22075 98bb5d8262b0e460860ba655285fdc43 ""
+  "sumfuncfunc.png" 1792195365.64215 212797 bbd6d4d978d40c06cc16fcc90625bc3e ""
+  "sumfunctemp.png" 1792195389.6177 218120 fd7c0d6548cf52ccf055a36387daf1e0 ""
+  "summuxfunc.png" 1792195250.867 166570 7ddeeb1e11158a35bbd4461785d1af4e ""
+  "summuxhdl.png" 1792194337.77925 30877 30dc0a3249cda5ef8ba9d11a1fc445a9 ""
+  "summuxtemp.png" 1792195295.78885 169759 9a62d9caa37e7872241ee57ad31fb2b2 ""
+  "tabelasomador.png" 1792193768.61143 61138 b96a11a310c8f68f7ac412b349a409c3 ""
   (generated)
   "relatorio.aux"
   "relatorio.log"

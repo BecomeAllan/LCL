@@ -31,142 +31,220 @@
      
 \sloppy
 
-\title{Experimento X\\ 
-Circuitos Combinacionais: Multiplexadores}
+\title{Experimento 5\\ 
+Implementação de Circuitos Combinacionais com Multiplexadores}
 
-\author{Grupo G37\\    %%%% LEMBRE-SE DE MUDAR O GRUPO !!!!! %%%%%%
-        Aluno 1, 10/0012345\\
-        Aluno 2,  12/0123456\\
-        Aluno 3, 11/1029881\\
+\author{Grupo B2 - Turma T2\\   
+        Allan Victor Almeida Faria, 261010546\\
+        Caio César Gonçalves Ribeiro,  211038217\\
+        Danilo Alves Ribeiro,  242003754\\
 }
 
 
 \address{Dep. Ciência da Computação -- Universidade de Brasília (UnB)\\
   CIC0231 - Laboratório de Circuitos Lógicos\\
   \today
-  \email{aluno1@gmail.com, aluno2@hotmail.com,  aluno3@aluno.unb.br}
+  \email{allanvictor.almeida@gmail.com, caiocesar20032003@gmail.com, daniloalvesjob@gmail.com}
 }
 
 \begin{document} 
 \maketitle
 
+
 \selectlanguage{american}
- \begin{abstract}
-Write a short summary of the report here. It should be written in a way that summarizes what the experiment was and the main results.
- \end{abstract}
-\selectlanguage{brazil}     
-    
- \begin{resumo} 
-  Escreva aqui um pequeno resumo do relatório. Deve ser escrito de maneira que se entenda de forma resumida o que foi o experimento e os resultados principais.
- \end{resumo}
+\begin{abstract}
+This report presents the design, synthesis and implementation on an FPGA of three combinational logic circuits described in a hardware description language (HDL): a full adder built from two 8-input multiplexers, a full adder built only from basic logic gates, and a special logic function built from a demultiplexer and a multiplexer. The circuits were synthesized in Quartus-II and recorded on the DE2-70 development kit. Functional and timing simulations, together with tests on the board that went through every input combination, matched the expected truth tables, which validated all three implementations.
+\end{abstract}
+\selectlanguage{brazil}
+
+\begin{resumo}
+Este relatório apresenta o projeto, a síntese e a implementação em FPGA de três circuitos lógicos combinacionais descritos em linguagem de descrição de hardware (HDL): um somador completo construído com dois multiplexadores de 8 entradas, um somador completo construído apenas com portas lógicas básicas e uma função lógica especial construída a partir de um demultiplexador e de um multiplexador. Os circuitos foram sintetizados no Quartus-II e gravados no kit de desenvolvimento DE2-70. As simulações funcional e temporal, junto com os testes na placa percorrendo todas as combinações de entrada, concordaram com as tabelas-verdade esperadas, validando as três implementações.
+\end{resumo}
+
 
 
 \section{Introdução}
 \label{sec:Introducao}
 
-Deve ser um texto próprio do aluno que contextualize os assuntos a serem trabalhados no experimento, bem como os objetivos e materiais utilizados. Aqui temos um exemplo de como citar a bibliografia consultada \cite{boulic:91} \cite{smith:99}.
+Circuitos digitais combinacionais são aqueles cujas saídas dependem apenas da combinação atual das entradas, e podem ser descritos por tabelas-verdade e expressões booleanas \cite{wakerly90}. Blocos como somadores, multiplexadores e demultiplexadores são a base de sistemas digitais mais complexos, como unidades aritméticas e circuitos de roteamento de dados.
+
+Linguagens de descrição de hardware (HDL) permitem descrever esses circuitos de forma textual, simulá-los e sintetizá-los em dispositivos reconfiguráveis, como os FPGAs. Esse fluxo de projeto torna possível verificar o comportamento do circuito antes de gravá-lo e, depois, confirmá-lo na própria placa.
+
+Neste experimento, foram implementados três circuitos: um somador completo construído com multiplexadores, um somador completo construído com portas lógicas tradicionais e uma função lógica especial construída com um demultiplexador e um multiplexador. Cada circuito foi validado por simulações funcional e temporal e por gravação no FPGA, percorrendo todas as combinações de entrada para comparar as saídas com as tabelas-verdade.
+
+
 
 \subsection{Objetivos}
 \label{sec:Objetivos}
 
-Descrever aqui os objetivos do experimento.
+Projetar circuitos em linguagem de descrição de Hardware, sintetizando-os
+e implementando-os em FPGA.
 
 \subsection{Materiais} 
 \label{sec:Materiais}
 Neste experimento foram utilizados os seguintes materiais e equipamentos:
 \begin{itemize}
-    \item Painel Digital
+    \item Software Quartus-II versão 13.0 SP1
 
-    \item \textit{Protoboard}
+    \item Kit de desenvolvimento em FPGA DE2-70 Intel
     
-    \item Fios
-    
-    \item Portas Lógicas AND e NAND
 \end{itemize}
 
 \section{Procedimentos e Resultados}
 \label{sec:Procedimentos}
 
-Deve conter a descrição completa de cada item solicitado no experimento, como foram realizados, problemas encontrados e resultados obtidos (esperados ou não). Deve conter figuras, fotos, gráficos, tabelas e links clicáveis para os vídeos solicitados.
+Foram sintetizadas três funções lógicas a partir de código HDL
+para o DE2-70. Nesse contexto, gravou-se os testes iterando
+por cada combinação lógica, de modo a comprovar a corretude
+da implementação mediante comparação com a tabela-verdade
+das funções.
 
-\subsection{Multiplexador de 4 entradas}
+\subsection{Somador com Multiplexador}
 \label{sec:Mux}
 
-Descrever o experimento realizado. Sempre que colocar uma figura, deve-se explicar o que o leitor deve ver, ou uma análise logo após a figura. 
+A tabela verdade da saída normal e da saída carry de um somador completo são, respectivamente:
+
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.5\textwidth]{fig1.jpg}
-    \caption{Exemplo de como colocar a legenda em uma figura.}
-    \label{fig:exemplo}
+    \includegraphics[width=.5\textwidth]{tabelasomador.png}
+    \caption{Somador Completo}
+    \label{fig:q1}
 \end{figure}
 
-A Figura~\ref{fig:exemplo} apresenta um exemplo de como usar e citar uma figura. Sempre comente cada figura no texto.
 
-Aqui temos um exemplo de como citar uma URL na bibliografia~\cite{systemverilog}.
 
-Aqui temos um exemplo de como criar um hiperlink. Veja neste
-\href{https://www.youtube.com/watch?v=itWbXy0Qzw0}{link} um exemplo de vídeo publicado. Ao contrário do vídeo deste exemplo, sempre inicie o vídeo apresentando o grupo (nome e semestre), narrando o que é o experimento, os objetivos e descreva o que está sendo feito no vídeo.
+Dessa forma, para construção de um somador a partir de dois multiplexadores de 8 entradas, um para
+cada saída,
+tomaremos A,B, Cin como bits de seleção, e fixaremos as entradas com os valores correspondentes
+aos valores esperados para um somador. Por exemplo, ao somarmos 1+1+1, esperamos que ambas 
+as saídas estejam em 1. Como isso equivale a selecionar a sétima entrada em cada multiplexador,
+fixaremos 1 nessa respectiva entrada. Dessa forma, os códigos em HDL são:
 
-Sempre identifique no site do vídeo:
-\begin{itemize}
-    \item o experimento: Experimento 7;
-    \item o semestre: 2022/1;
-    \item a disciplina: CIC0231 - Laboratório de Circuitos Lógicos;
-    \item a universidade: Universidade de Brasília (UnB);
-    \item o grupo: Grupo G37;
-    \item os nomes dos componentes do grupo.
-\end{itemize}
 
-Desta forma se facilita uma busca pelo vídeo. É apresentado acima como fazer uma listagem não numerada.
 
-\subsection{Demultiplexador}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{mux8.png}
+    \caption{Mux8}
+    \label{fig:q2}
+\end{figure}
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{summuxhdl.png}
+    \caption{Somador com Multiplexador}
+    \label{fig:q3}
+\end{figure}
+
+
+As simulações funcional e temporal mostraram a corretude de nosso modelo. Mais ainda, pode 
+se ver a implementação no FPGA nesse \href{https://drive.google.com/file/d/1dFoEPFyvkyebN_j2qbqQsv9ghaUFfVyX/view?usp=drive_link}{link}.:
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{summuxfunc.png}
+    \caption{Simulação Funcional do Somador Com Mux}
+    \label{fig:q4}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{summuxtemp.png}
+    \caption{Simulação temporal do somador com Mux}
+    \label{fig:q5}
+\end{figure}
+
+
+
+\subsection{Somador Normal}
 \label{sec:Demux}
 
-Este é outro item do experimento. Aqui temos um exemplo de como construir e citar uma tabela, conforme mostrado na Tabela~\ref{tab:resultados}.
+Implementa-se um somador completo de forma "nativa", usando somente portas lógicas tradicionais.
+A lógica se dá da seguinte forma: Para que a saída de carry seja '1', basta que duas das entradas
+sejam '1'. Já para que a saída comum seja '1', o número de '1's nas entradas deve ser ímpar, o que
+é representado pela função XOR\cite{wakerly90}. O código então é:
 
-\begin{table}[H]
+\begin{figure}[H]
     \centering
-    \caption{Exemplo de como construir uma tabela.}
-    \label{tab:resultados}
-    \begin{tabular}{|c|c|c|c|c|c|c|c|}
-    \cline{2-7}
-    \multicolumn{1}{c}{} & \multicolumn{3}{|c|}{Fase 1} & \multicolumn{3}{c|}{Fase 2} & \multicolumn{1}{c}{} \\
-    \hline
-    Experimento & $n_g$ & $n_l$ & $n_t$ & $n_g$ & $n_l$ & $n_t$ & $t(s)$ \\
-    \hline
-    1 bit full adder & 8.16 & 3.8 & 47.6 & 5.03 & 3.0 & 25.93 & 99.13 \\
-    2 bits full adder & 18.06 & 5.16 & 107.13 & 11.06 & 4.9 & 60.06 & 709.56 \\
-    2 bits multiplier & 14.2 & 4.03 & 74.33 & 7.7 & 2.2 & 37.53 & 357.76 \\
-    7 segment decoder & 47.53 & 5.83 & 270.46 & 32.86 & 5.0 & 176.4 & 740.63 \\
-    Karnaugh 1 bit full adder & 19.0 & 6.0 & 102.0 & 5.03 & 3.0 & 24.8 & 130.73 \\
-    \hline
-    \end{tabular}
+    \includegraphics[width=.5\textwidth]{somadorhdl.png}
+    \caption{Còdigo do Somador Completo}
+    \label{fig:q6}
+\end{figure}
 
-\end{table}
+O circuito foi sintetizado no FPGA, o que pode ser conferido nesse \href{https://drive.google.com/file/d/1N62ObaMJhtwip5XoDJ2DXeVjFkb4ecKe/view?usp=drive_link}{link}.
+Também foram feitas as simulações, que mostraram resultado idêntico ao outro somador:
 
-Aqui devemos colocar uma apresentação e análise da tabela, explicando ao leitor o que se pretende mostrar. A Tabela~\ref{tab:resultados} mostra os tempos de propagação dos diferentes circuitos testados.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{summuxfunc.png}
+    \caption{Simulação funcional do Somador}
+    \label{fig:q7}
+\end{figure}
 
-As equações devem fazer parte do texto, como 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{summuxtemp.png}
+    \caption{Simulação Temporal do Somador}
+    \label{fig:q8}
+\end{figure}
 
-\begin{equation}
-\label{eq:logica}
-    Y=AB+\bar{B}\bar{A}
-\end{equation}
+\subsection{Função Especial}
 
-\noindent onde $A$ e $B$ são as variáveis de entrada. $Y$ a variável de saída. Podemos citar como Equação~\ref{eq:logica}.
+Foi construída, a partir de um demultiplexador e do multiplexador, uma função lógica.
+O código HDL da função e do multiplexador é dado por:
 
-Em cada item, após a apresentação dos resultados obtidos, sempre faça uma análise crítica desses resultados.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{demuxhdl.png}
+    \caption{Código do Demultiplexador}
+    \label{fig:q9}
+\end{figure}
 
-Dica: Use pesquisa na Internet para tirar as dúvidas sobre edição em \LaTeX .
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{funcao7hdl.png}
+    \caption{Código da Função}
+    \label{fig:q10}
+\end{figure}
+
+Observou-se, tanto nas simulações, quanto no circuito sintetizado
+(cuja gravação pode ser vista \href{https://drive.google.com/file/d/19dGameKy70aLvt4kIDSw6L9Ls2EbMcVs/view?usp=drive_link}{aqui})
+a corretude do modelo, que respondeu '1' nos mintermos esperados. Atenta-se para a peridiocidade dos mintermos com FG, o termo 
+mais abrangente da função:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.75\textwidth]{sumfuncfunc.png}
+    \caption{Simulação Funcional da Função}
+    \label{fig:q11}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.75\textwidth]{sumfunctemp.png}
+    \caption{Simulação Temporal da Função}
+    \label{fig:q12}
+\end{figure}
+
 
 \section{Conclusões}
+
+Os três circuitos projetados foram descritos em HDL, sintetizados e gravados com sucesso no FPGA DE2-70. Em todos os casos, as simulações funcional e temporal e os testes na placa, percorrendo todas as combinações de entrada, concordaram com as tabelas-verdade esperadas, o que comprova a corretude das implementações.
+
+O somador com multiplexadores e o somador com portas lógicas apresentaram resultados idênticos, mostrando que uma mesma função pode ser implementada por estruturas diferentes. Já a função especial respondeu '1' exatamente nos mintermos esperados, incluindo a periodicidade associada ao termo FG.
+
+Assim, o objetivo do experimento foi atingido: projetar circuitos em HDL, sintetizá-los e implementá-los em FPGA.
 \label{sec:Conclusao}
 
-Concluir o relatório explanando rapidamente o que foi feito e os resultados obtidos, sempre correlacionando com os objetivos do experimento apresentados na Seção~\ref{sec:Objetivos}. 
+ 
 
 
-\bibliographystyle{sbc}
+\bibliographystyle{plain}
 \bibliography{relatorio}  %Aqui é a definição do arquivo .bib a ser usado pelas referências
 
 
