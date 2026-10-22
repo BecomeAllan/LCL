@@ -1,0 +1,73 @@
+# ==========================================================
+# LaTeX build artifacts ("noise")
+# Kept under version control: .tex, .bib, .pdf, .sty, .bst and assets
+# (images, videos, .sv, etc.)
+# ==========================================================
+
+# Auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.lol
+*.loa
+*.fls
+*.fdb_latexmk
+*.auxlock
+*.tdo
+*.thm
+
+# SyncTeX
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+*.synctex.gz(busy)
+
+# Bibliography (generated; the .bib source is kept)
+*.bbl
+*.blg
+*.brf
+
+# Cross-references / indexes / glossaries
+*.nav
+*.snm
+*.vrb
+*.spl
+*.idx
+*.ilg
+*.ind
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+*.xdy
+*.bcf
+*.run.xml
+
+# Intermediate output formats
+*.dvi
+*.xdv
+*.ps
+
+# latexmk / pandoc leftovers
+*.latexmk
+latex.out/
+
+# Editor backup / swap files
+*~
+\#*\#
+.#*
+*.swp
+*.swo
+*.sav
+
+# OS / IDE noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
