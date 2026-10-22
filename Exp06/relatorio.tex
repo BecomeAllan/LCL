@@ -31,20 +31,20 @@
      
 \sloppy
 
-\title{Experimento X\\ 
-Circuitos Combinacionais: Multiplexadores}
+\title{Experimento 6\\ 
+Circuitos Combinacionais: Codificador e Decodificador}
 
-\author{Grupo G37\\    %%%% LEMBRE-SE DE MUDAR O GRUPO !!!!! %%%%%%
-        Aluno 1, 10/0012345\\
-        Aluno 2,  12/0123456\\
-        Aluno 3, 11/1029881\\
+\author{Grupo B2 - Turma T2\\   
+        Allan Victor Almeida Faria, 261010546\\
+        Caio César Gonçalves Ribeiro,  211038217\\
+        Danilo Alves Ribeiro,  242003754\\
 }
 
 
 \address{Dep. Ciência da Computação -- Universidade de Brasília (UnB)\\
   CIC0231 - Laboratório de Circuitos Lógicos\\
   \today
-  \email{aluno1@gmail.com, aluno2@hotmail.com,  aluno3@aluno.unb.br}
+  \email{allanvictor.almeida@gmail.com, caiocesar20032003@gmail.com, daniloalvesjob@gmail.com}
 }
 
 \begin{document} 
@@ -64,24 +64,30 @@ Write a short summary of the report here. It should be written in a way that sum
 \section{Introdução}
 \label{sec:Introducao}
 
-Deve ser um texto próprio do aluno que contextualize os assuntos a serem trabalhados no experimento, bem como os objetivos e materiais utilizados. Aqui temos um exemplo de como citar a bibliografia consultada \cite{boulic:91} \cite{smith:99}.
+Em sistemas digitais, o processamento interno de informações é realizado predominantemente no sistema binário devido à simplicidade e confiabilidade dos circuitos eletrônicos de dois níveis de tensão. No entanto, na interação com o usuário e equipamentos de entrada/saída, a representação numérica predominantemente utilizada é a decimal. Para realizar a conversão entre esses domínios, utilizam-se circuitos combinacionais especializados denominados codificadores e decodificadores \cite{wakerly90}.
+
+Um \textit{codificador} é um circuito combinacional que recebe um conjunto de linhas de entrada (onde apenas uma linha é ativada por vez) e produz um código binário correspondente nas saídas. De forma inversa, um \textit{decodificador} recebe um código binário e ativa a única linha de saída associada àquela combinação. Dentre os códigos binários, o código de Gray destaca-se por alterar apenas um bit entre estados consecutivos, minimizando erros em sistemas de medição e contagem. Durante o projeto desses circuitos, a utilização de condições optativas (\textit{don't care}) permite simplificar significativamente as expressões booleanas resultantes.
+
+Neste experimento, foram projetados, minimizados e sintetizados em FPGA um codificador de decimal para código de Gray e um decodificador de código de Gray para decimal. As funções booleanas foram otimizadas e os circuitos foram desenhados e validados no software Quartus-II por meio de simulações funcional e temporal, culminando na implementação física no kit de desenvolvimento FPGA DE2-70.
 
 \subsection{Objetivos}
 \label{sec:Objetivos}
 
-Descrever aqui os objetivos do experimento.
+Os principais objetivos deste experimento consistem em:
+\begin{itemize}
+    \item Projetar um codificador de decimal para código de Gray e um decodificador de código de Gray para decimal, aplicando técnicas de minimização booleana com condições optativas (\textit{don't care});
+    \item Elaborar os diagramas esquemáticos no ambiente Quartus-II e realizar as simulações funcional e temporal para verificação do comportamento lógico;
+    \item Sintetizar e validar o funcionamento dos circuitos no kit de desenvolvimento FPGA DE2-70.
+\end{itemize}
 
 \subsection{Materiais} 
 \label{sec:Materiais}
+
 Neste experimento foram utilizados os seguintes materiais e equipamentos:
 \begin{itemize}
-    \item Painel Digital
-
-    \item \textit{Protoboard}
-    
-    \item Fios
-    
-    \item Portas Lógicas AND e NAND
+    \item Software Quartus-II versão 13.0 SP1;
+    \item Kit de desenvolvimento em FPGA DE2-70 Intel;
+    \item Cabo de programação USB-Blaster.
 \end{itemize}
 
 \section{Procedimentos e Resultados}
@@ -103,7 +109,7 @@ Descrever o experimento realizado. Sempre que colocar uma figura, deve-se explic
 
 A Figura~\ref{fig:exemplo} apresenta um exemplo de como usar e citar uma figura. Sempre comente cada figura no texto.
 
-Aqui temos um exemplo de como citar uma URL na bibliografia~\cite{systemverilog}.
+Aqui temos um exemplo de como citar uma URL na bibliografia.
 
 Aqui temos um exemplo de como criar um hiperlink. Veja neste
 \href{https://www.youtube.com/watch?v=itWbXy0Qzw0}{link} um exemplo de vídeo publicado. Ao contrário do vídeo deste exemplo, sempre inicie o vídeo apresentando o grupo (nome e semestre), narrando o que é o experimento, os objetivos e descreva o que está sendo feito no vídeo.
