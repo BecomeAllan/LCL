@@ -30,6 +30,7 @@
     }
      
 \sloppy
+\raggedbottom
 
 \title{Experimento 6\\ 
 Circuitos Combinacionais: Codificador e Decodificador}
@@ -52,38 +53,37 @@ Circuitos Combinacionais: Codificador e Decodificador}
 
 \selectlanguage{american}
  \begin{abstract}
-Write a short summary of the report here. It should be written in a way that summarizes what the experiment was and the main results.
+This report describes the design, minimization, simulation, and FPGA implementation of a decimal-to-Gray encoder and a Gray-to-decimal decoder. The Boolean functions were derived from the Gray code table and simplified with Karnaugh maps, using the don't-care conditions created by invalid input combinations. The encoder was reduced to four sums of inputs, with seventeen literals in total, and the decoder to ten product terms, with thirty-two literals, six of which do not depend on the most significant bit. Functional and temporal simulations in Quartus-II reproduced the expected truth tables, and the encoder/decoder pair synthesized on the DE2-70 kit converted each decimal digit selected on the switches to the corresponding LED. The results confirm the equivalence between the minimized expressions and the physical implementation, and show that the single-bit adjacency of the Gray code allows adjacent minterms to be grouped, reducing the decoder hardware.
  \end{abstract}
 \selectlanguage{brazil}     
-    
  \begin{resumo} 
-  Escreva aqui um pequeno resumo do relatório. Deve ser escrito de maneira que se entenda de forma resumida o que foi o experimento e os resultados principais.
+Este relatório descreve o projeto, a minimização, a simulação e a implementação em FPGA de um codificador de decimal para código de Gray e de um decodificador de Gray para decimal. As funções booleanas foram obtidas da tabela do código de Gray e simplificadas por mapas de Karnaugh, aproveitando as condições optativas geradas pelas entradas inválidas. O codificador ficou com quatro somas de entradas, dezessete literais no total, e o decodificador com dez produtos, trinta e dois literais, sendo que seis saídas não dependem do bit mais significativo. As simulações funcional e temporal no Quartus-II reproduziram as tabelas-verdade previstas, e o par codificador/decodificador sintetizado no kit DE2-70 converteu cada dígito decimal selecionado nas chaves ao LED correspondente. Os resultados confirmam a equivalência entre as expressões minimizadas e a implementação física e mostram que a adjacência de um único bit do código de Gray permite agrupar mintermos vizinhos, reduzindo o hardware do decodificador.
  \end{resumo}
 
 
 \section{Introdução}
 \label{sec:Introducao}
 
-Em sistemas digitais, o processamento interno de informações é realizado predominantemente no sistema binário devido à simplicidade e confiabilidade dos circuitos eletrônicos de dois níveis de tensão. No entanto, na interação com o usuário e equipamentos de entrada/saída, a representação numérica predominantemente utilizada é a decimal. Para realizar a conversão entre esses domínios, utilizam-se circuitos combinacionais especializados denominados codificadores e decodificadores \cite{wakerly90}.
+Em sistemas digitais, o processamento interno de informações é realizado predominantemente no sistema binário, devido à simplicidade e à confiabilidade dos circuitos eletrônicos de dois níveis de tensão. Na interação com o usuário e com equipamentos de entrada/saída, porém, a representação utilizada é a decimal. Para converter informações entre esses domínios, utilizam-se circuitos combinacionais denominados codificadores e decodificadores \cite{wakerly90}.
 
-Um \textit{codificador} é um circuito combinacional que recebe um conjunto de linhas de entrada (onde apenas uma linha é ativada por vez) e produz um código binário correspondente nas saídas. De forma inversa, um \textit{decodificador} recebe um código binário e ativa a única linha de saída associada àquela combinação. Dentre os códigos binários, o código de Gray destaca-se por alterar apenas um bit entre estados consecutivos, minimizando erros em sistemas de medição e contagem. Durante o projeto desses circuitos, a utilização de condições optativas (\textit{don't care}) permite simplificar significativamente as expressões booleanas resultantes.
+Um \textit{codificador} recebe um conjunto de linhas de entrada, em que apenas uma é ativada por vez, e produz nas saídas o código binário correspondente. O \textit{decodificador} faz o inverso: recebe um código binário e ativa a única saída associada àquela combinação. Entre os códigos existentes, o código de Gray destaca-se por alterar apenas um bit entre símbolos consecutivos. No projeto desses circuitos, as condições optativas (\textit{don't care}) permitem simplificar bastante as expressões booleanas.
 
-Neste experimento, foram projetados, minimizados e sintetizados em FPGA um codificador de decimal para código de Gray e um decodificador de código de Gray para decimal. As funções booleanas foram otimizadas e os circuitos foram desenhados e validados no software Quartus-II por meio de simulações funcional e temporal, culminando na implementação física no kit de desenvolvimento FPGA DE2-70.
+Neste experimento, foram projetados, minimizados e sintetizados em FPGA um codificador de decimal para Gray e um decodificador de Gray para decimal, com diagramas no Quartus-II, simulações funcional e temporal e validação no kit DE2-70.
 
 \subsection{Objetivos}
 \label{sec:Objetivos}
 
-Os principais objetivos deste experimento consistem em:
+Os objetivos do experimento são:
 \begin{itemize}
-    \item Projetar um codificador de decimal para código de Gray e um decodificador de código de Gray para decimal, aplicando técnicas de minimização booleana com condições optativas (\textit{don't care});
-    \item Elaborar os diagramas esquemáticos no ambiente Quartus-II e realizar as simulações funcional e temporal para verificação do comportamento lógico;
-    \item Sintetizar e validar o funcionamento dos circuitos no kit de desenvolvimento FPGA DE2-70.
+    \item Projetar um codificador de decimal para Gray e um decodificador de Gray para decimal, aplicando minimização booleana com condições optativas;
+    \item Elaborar os diagramas esquemáticos no Quartus-II e realizar as simulações funcional e temporal;
+    \item Sintetizar e validar os circuitos no kit de desenvolvimento FPGA DE2-70.
 \end{itemize}
 
 \subsection{Materiais} 
 \label{sec:Materiais}
 
-Neste experimento foram utilizados os seguintes materiais e equipamentos:
+Foram utilizados:
 \begin{itemize}
     \item Software Quartus-II versão 13.0 SP1;
     \item Kit de desenvolvimento em FPGA DE2-70 Intel;
@@ -93,84 +93,237 @@ Neste experimento foram utilizados os seguintes materiais e equipamentos:
 \section{Procedimentos e Resultados}
 \label{sec:Procedimentos}
 
-Deve conter a descrição completa de cada item solicitado no experimento, como foram realizados, problemas encontrados e resultados obtidos (esperados ou não). Deve conter figuras, fotos, gráficos, tabelas e links clicáveis para os vídeos solicitados.
-
-\subsection{Multiplexador de 4 entradas}
-\label{sec:Mux}
-
-Descrever o experimento realizado. Sempre que colocar uma figura, deve-se explicar o que o leitor deve ver, ou uma análise logo após a figura. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.5\textwidth]{fig1.jpg}
-    \caption{Exemplo de como colocar a legenda em uma figura.}
-    \label{fig:exemplo}
-\end{figure}
-
-A Figura~\ref{fig:exemplo} apresenta um exemplo de como usar e citar uma figura. Sempre comente cada figura no texto.
-
-Aqui temos um exemplo de como citar uma URL na bibliografia.
-
-Aqui temos um exemplo de como criar um hiperlink. Veja neste
-\href{https://www.youtube.com/watch?v=itWbXy0Qzw0}{link} um exemplo de vídeo publicado. Ao contrário do vídeo deste exemplo, sempre inicie o vídeo apresentando o grupo (nome e semestre), narrando o que é o experimento, os objetivos e descreva o que está sendo feito no vídeo.
-
-Sempre identifique no site do vídeo:
-\begin{itemize}
-    \item o experimento: Experimento 7;
-    \item o semestre: 2022/1;
-    \item a disciplina: CIC0231 - Laboratório de Circuitos Lógicos;
-    \item a universidade: Universidade de Brasília (UnB);
-    \item o grupo: Grupo G37;
-    \item os nomes dos componentes do grupo.
-\end{itemize}
-
-Desta forma se facilita uma busca pelo vídeo. É apresentado acima como fazer uma listagem não numerada.
-
-\subsection{Demultiplexador}
-\label{sec:Demux}
-
-Este é outro item do experimento. Aqui temos um exemplo de como construir e citar uma tabela, conforme mostrado na Tabela~\ref{tab:resultados}.
+Antes de descrever os circuitos, registra-se que a filmagem do funcionamento no kit não foi realizada, o que é uma falha de organização do grupo. A execução do experimento, contudo, é comprovada pelo desempenho nas etapas de Pré-Projeto e de Pós-Experimento, em que os circuitos foram apresentados e testados no kit e receberam a pontuação correspondente. Falta, portanto, apenas o registro em vídeo. A Tabela~\ref{tab:gray} apresenta o código adotado.
 
 \begin{table}[H]
     \centering
-    \caption{Exemplo de como construir uma tabela.}
-    \label{tab:resultados}
-    \begin{tabular}{|c|c|c|c|c|c|c|c|}
-    \cline{2-7}
-    \multicolumn{1}{c}{} & \multicolumn{3}{|c|}{Fase 1} & \multicolumn{3}{c|}{Fase 2} & \multicolumn{1}{c}{} \\
-    \hline
-    Experimento & $n_g$ & $n_l$ & $n_t$ & $n_g$ & $n_l$ & $n_t$ & $t(s)$ \\
-    \hline
-    1 bit full adder & 8.16 & 3.8 & 47.6 & 5.03 & 3.0 & 25.93 & 99.13 \\
-    2 bits full adder & 18.06 & 5.16 & 107.13 & 11.06 & 4.9 & 60.06 & 709.56 \\
-    2 bits multiplier & 14.2 & 4.03 & 74.33 & 7.7 & 2.2 & 37.53 & 357.76 \\
-    7 segment decoder & 47.53 & 5.83 & 270.46 & 32.86 & 5.0 & 176.4 & 740.63 \\
-    Karnaugh 1 bit full adder & 19.0 & 6.0 & 102.0 & 5.03 & 3.0 & 24.8 & 130.73 \\
-    \hline
+    \caption{Código de Gray para os dígitos decimais (Tabela I do roteiro).}
+    \label{tab:gray}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Decimal & $A$ & $B$ & $C$ & $D$ \\
+        \hline
+        0 & 0 & 0 & 0 & 0 \\
+        \hline
+        1 & 0 & 0 & 0 & 1 \\
+        \hline
+        2 & 0 & 0 & 1 & 1 \\
+        \hline
+        3 & 0 & 0 & 1 & 0 \\
+        \hline
+        4 & 0 & 1 & 1 & 0 \\
+        \hline
+        5 & 0 & 1 & 1 & 1 \\
+        \hline
+        6 & 0 & 1 & 0 & 1 \\
+        \hline
+        7 & 0 & 1 & 0 & 0 \\
+        \hline
+        8 & 1 & 1 & 0 & 0 \\
+        \hline
+        9 & 1 & 1 & 0 & 1 \\
+        \hline
     \end{tabular}
-
 \end{table}
 
-Aqui devemos colocar uma apresentação e análise da tabela, explicando ao leitor o que se pretende mostrar. A Tabela~\ref{tab:resultados} mostra os tempos de propagação dos diferentes circuitos testados.
+\subsection{Codificador decimal para Gray}
+\label{sec:Encoder}
 
-As equações devem fazer parte do texto, como 
+O codificador recebe as dez chaves do kit, uma para cada dígito, e gera em $A$, $B$, $C$ e $D$ o código de Gray correspondente. Como apenas uma chave deve estar acionada, as combinações com duas ou mais chaves são inválidas e foram tratadas como condições optativas; o mesmo vale para o dígito 0, cujo código é $0000$ e não depende das chaves.
 
-\begin{equation}
-\label{eq:logica}
-    Y=AB+\bar{B}\bar{A}
-\end{equation}
+Para cada saída, assinalaram-se com $1$ os dígitos cujo código tem aquele bit igual a $1$ e com $X$ as combinações inválidas. A minimização por mapas de Karnaugh forneceu:
 
-\noindent onde $A$ e $B$ são as variáveis de entrada. $Y$ a variável de saída. Podemos citar como Equação~\ref{eq:logica}.
+\[
+\begin{array}{rcl}
+    A & = & X_8 + X_9 \\[2pt]
+    B & = & X_4 + X_5 + X_6 + X_7 + X_8 + X_9 \\[2pt]
+    C & = & X_2 + X_3 + X_4 + X_5 \\[2pt]
+    D & = & X_1 + X_2 + X_5 + X_6 + X_9
+\end{array}
+\]
 
-Em cada item, após a apresentação dos resultados obtidos, sempre faça uma análise crítica desses resultados.
+\noindent em que $X_i$ é a chave do dígito $i$. A forma canônica teria dez mintermos de dez literais; a minimização reduziu o circuito a quatro portas OU, com dezessete literais e nenhum inversor. O diagrama esquemático é mostrado na Figura~\ref{fig:encoder}.
 
-Dica: Use pesquisa na Internet para tirar as dúvidas sobre edição em \LaTeX .
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.9\textwidth]{encoder.png}
+    \caption{Diagrama esquemático do codificador decimal para Gray no Quartus-II.}
+    \label{fig:encoder}
+\end{figure}
+
+Na Figura~\ref{fig:encoder}, cada porta OU tem um número de entradas igual ao número de termos da respectiva soma, e as chaves ligadas diretamente às portas correspondem aos literais das equações.
+
+\subsubsection{Simulações do codificador}
+
+As simulações funcional e temporal foram feitas no editor de formas de onda do Quartus-II. O estímulo percorre todas as combinações das dez chaves; nos intervalos em que apenas uma chave está ativa, as saídas assumem exatamente os valores da Tabela~\ref{tab:gray}. A simulação temporal mostrou que os atrasos das portas OU não alteram os níveis após o transitório. As capturas são mostradas nas Figuras~\ref{fig:sim-encoder-funcional} e~\ref{fig:sim-encoder-temporal}; nelas, as dez linhas decimais aparecem como $A_0$ a $A_9$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{simfuncionalencoder.png}
+    \caption{Simulação funcional do codificador: entradas $A_0$ a $A_9$ e saídas $A$, $B$, $C$ e $D$.}
+    \label{fig:sim-encoder-funcional}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{simtemporalencoder.png}
+    \caption{Simulação temporal do codificador, com os atrasos de propagação das portas OU.}
+    \label{fig:sim-encoder-temporal}
+\end{figure}
+
+\subsection{Decodificador Gray para decimal}
+\label{sec:Decoder}
+
+O decodificador recebe $A$, $B$, $C$ e $D$ e ativa uma única saída $S_i$, correspondente ao dígito $i$. Cada saída é $1$ apenas quando a entrada é igual ao código daquele dígito; as seis combinações de $1010$ a $1111$ não representam dígitos e foram tratadas como condições optativas. A minimização resultou em:
+
+\[
+\begin{array}{rclcrcl}
+    S_0 & = & \bar{B}\bar{C}\bar{D} & \qquad & S_5 & = & B\,C\,D \\[2pt]
+    S_1 & = & \bar{B}\bar{C}D & \qquad & S_6 & = & \bar{A}B\bar{C}D \\[2pt]
+    S_2 & = & \bar{B}C\,D & \qquad & S_7 & = & \bar{A}B\bar{C}\bar{D} \\[2pt]
+    S_3 & = & \bar{B}C\bar{D} & \qquad & S_8 & = & A\bar{C}\bar{D} \\[2pt]
+    S_4 & = & B\,C\bar{D} & \qquad & S_9 & = & A\,D
+\end{array}
+\]
+
+A Tabela~\ref{tab:decoder} apresenta a tabela-verdade completa, com as dezesseis combinações de entrada; nas linhas inválidas as saídas são marcadas com ``--''.
+
+\begin{table}[H]
+    \centering
+    \small
+    \caption{Tabela-verdade completa do decodificador Gray para decimal.}
+    \label{tab:decoder}
+    \begin{tabular}{|c|c|c|c||c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $A$ & $B$ & $C$ & $D$ & $S_0$ & $S_1$ & $S_2$ & $S_3$ & $S_4$ & $S_5$ & $S_6$ & $S_7$ & $S_8$ & $S_9$ \\
+        \hline
+        0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        0 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+        \hline
+        0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+        \hline
+        0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        \hline
+        1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        \hline
+        1 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+        \hline
+        1 & 0 & 1 & 0 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+        \hline
+        1 & 0 & 1 & 1 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+        \hline
+        1 & 0 & 0 & 0 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+        \hline
+        1 & 0 & 0 & 1 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+        \hline
+        1 & 1 & 1 & 0 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+        \hline
+        1 & 1 & 1 & 1 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+        \hline
+    \end{tabular}
+\end{table}
+
+O diagrama lógico foi dividido em duas folhas apenas por organização. A Figura~\ref{fig:decoder1} traz as negações de $D$ e $C$ e as portas de $S_0$ a $S_5$; a Figura~\ref{fig:decoder2}, as negações de $B$ e $A$ e as portas de $S_6$ a $S_9$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{decoderprimeiraparte.png}
+    \caption{Primeira parte do decodificador no Quartus-II: portas de $S_0$ a $S_5$.}
+    \label{fig:decoder1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{decoderparte2.png}
+    \caption{Segunda parte do decodificador no Quartus-II: portas de $S_6$ a $S_9$.}
+    \label{fig:decoder2}
+\end{figure}
+
+\subsubsection{Simulações do decodificador}
+
+A simulação funcional usou como estímulo um contador de quatro bits em código de Gray, conforme sugerido no roteiro, que percorre os dezesseis códigos. Nos dez válidos, apenas $S_i$ fica em nível alto, na ordem dos dígitos; nos seis inválidos, nenhuma saída é ativada, o que aparece na forma de onda como um intervalo sem saída ativa entre $S_7$ e $S_8$. A simulação temporal confirmou que os atrasos das portas E e das negações não afetam o resultado após o transitório. As capturas são mostradas nas Figuras~\ref{fig:sim-decoder-funcional} e~\ref{fig:sim-decoder-temporal}, nas quais as dez linhas decimais aparecem como $A_0$ a $A_9$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{simfuncionaldecoder.png}
+    \caption{Simulação funcional do decodificador: entradas $A$, $B$, $C$ e $D$ em código de Gray e saídas $A_0$ a $A_9$.}
+    \label{fig:sim-decoder-funcional}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{simtemporaldecoder.png}
+    \caption{Simulação temporal do decodificador, com os atrasos das portas E e das negações.}
+    \label{fig:sim-decoder-temporal}
+\end{figure}
+
+\subsubsection{Vantagem do código de Gray na minimização do decodificador}
+\label{sec:vantagem-gray}
+
+No decodificador BCD, as saídas de 0 a 7 exigem, cada uma, um produto de quatro literais, porque dígitos consecutivos diferem em vários bits e seus mintermos não são adjacentes no mapa de Karnaugh. No código de Gray, dois símbolos consecutivos diferem em apenas um bit, de modo que os mintermos vizinhos são sempre adjacentes e podem ser agrupados. Por isso, as saídas $S_0$ a $S_5$ dispensaram o bit $A$ e ficaram com três literais, e $S_9$ reduziu-se a $A\,D$. No total, o decodificador de Gray ficou com trinta e dois literais, contra trinta e oito do BCD equivalente.
+
+\subsection{Pós-Experimento: integração no kit FPGA}
+\label{sec:PosExperimento}
+
+Na etapa final, o codificador e o decodificador foram ligados em cascata, conforme a Figura 4 do roteiro: as chaves selecionam o dígito decimal, o codificador gera o código de Gray e o decodificador reconstrói o dígito, indicado por um LED. O esquema integrado é mostrado na Figura~\ref{fig:integrado}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.85\textwidth]{circuitofigura.png}
+    \caption{Circuito integrado: as chaves \texttt{SW[9..0]} alimentam o codificador, cujas saídas também vão para \texttt{LEDG[3..0]}, e o decodificador ativa uma das saídas \texttt{LEDR[9..0]}.}
+    \label{fig:integrado}
+\end{figure}
+
+Na Figura~\ref{fig:integrado}, os bits do código de Gray são levados ao decodificador e, ao mesmo tempo, aos LEDs verdes, o que permite conferir visualmente o código gerado; a saída do decodificador vai para os LEDs vermelhos. O resultado esperado para cada dígito está na Tabela~\ref{tab:integrado}.
+
+\begin{table}[H]
+    \centering
+    \caption{Resultado esperado da integração codificador/decodificador.}
+    \label{tab:integrado}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Dígito & $A\,B\,C\,D$ (\texttt{LEDG}) & LED aceso (\texttt{LEDR}) & Saída ativa \\
+        \hline
+        0 & 0000 & \texttt{LEDR[0]} & $S_0$ \\
+        \hline
+        1 & 0001 & \texttt{LEDR[1]} & $S_1$ \\
+        \hline
+        2 & 0011 & \texttt{LEDR[2]} & $S_2$ \\
+        \hline
+        3 & 0010 & \texttt{LEDR[3]} & $S_3$ \\
+        \hline
+        4 & 0110 & \texttt{LEDR[4]} & $S_4$ \\
+        \hline
+        5 & 0111 & \texttt{LEDR[5]} & $S_5$ \\
+        \hline
+        6 & 0101 & \texttt{LEDR[6]} & $S_6$ \\
+        \hline
+        7 & 0100 & \texttt{LEDR[7]} & $S_7$ \\
+        \hline
+        8 & 1100 & \texttt{LEDR[8]} & $S_8$ \\
+        \hline
+        9 & 1101 & \texttt{LEDR[9]} & $S_9$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+No kit, o circuito foi sintetizado e testado com uma chave acionada por vez. Para todos os dez dígitos, o LED correspondente acendeu, os demais permaneceram apagados e os LEDs verdes exibiram o código da Tabela~\ref{tab:gray}. A condição de nenhuma chave acionada também leva a $0000$ e ao LED do dígito 0, o que é coerente com o projeto. Combinações com duas ou mais chaves não têm significado definido, pois foram tratadas como condições optativas.
 
 \section{Conclusões}
 \label{sec:Conclusao}
 
-Concluir o relatório explanando rapidamente o que foi feito e os resultados obtidos, sempre correlacionando com os objetivos do experimento apresentados na Seção~\ref{sec:Objetivos}. 
+O experimento cumpriu os objetivos propostos. Os circuitos foram projetados, minimizados e desenhados no Quartus-II, e as simulações funcional e temporal reproduziram as tabelas-verdade previstas. No kit DE2-70, cada dígito selecionado nas chaves acendeu o LED correspondente, confirmando o funcionamento do conjunto codificador/decodificador.
 
+A principal lição do experimento foi a vantagem do código de Gray sobre o BCD no decodificador: como símbolos consecutivos diferem em apenas um bit, os mintermos vizinhos são adjacentes e podem ser agrupados, o que gera expressões menores. Ficou claro também que as condições optativas são o que torna essa simplificação possível e que a escolha do código faz parte do projeto do circuito.
 
 \bibliographystyle{sbc}
 \bibliography{relatorio}  %Aqui é a definição do arquivo .bib a ser usado pelas referências
